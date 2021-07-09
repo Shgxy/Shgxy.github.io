@@ -134,8 +134,71 @@ img<span class="token punctuation">.</span>height <span class="token operator">=
 ]]></content>
   </entry>
   <entry>
+    <title>CTF:从0到1——札记（二）</title>
+    <url>/2021/07/09/2021-07-09-CTF%E4%BB%8E0%E5%88%B01%E2%80%94%E2%80%94%E6%9C%AD%E8%AE%B0%EF%BC%88%E4%BA%8C%EF%BC%89/</url>
+    <content><![CDATA[<h1 id="札记（二）——-敏感备份文件、Banner识别"><a href="#札记（二）——-敏感备份文件、Banner识别" class="headerlink" title="札记（二）——  敏感备份文件、Banner识别"></a>札记（二）——  敏感备份文件、Banner识别</h1><h2 id="敏感备份文件"><a href="#敏感备份文件" class="headerlink" title="敏感备份文件"></a>敏感备份文件</h2><h3 id="gedit备份文件"><a href="#gedit备份文件" class="headerlink" title="gedit备份文件"></a>gedit备份文件</h3><p><strong>Hole：</strong>Linux下，用gedit编辑器保存后，当前目录下会生成一个后缀为<code>“~”</code>的文件（如<code>index.php~</code>），其内容就是刚刚编辑过的内容。</p>
+<blockquote>
+<p>关键词：后缀 ~ </p>
+</blockquote>
+<p>通过访问这个后缀的内容，即可获取源代码或<strong>flag</strong>。</p>
+<h3 id="vim备份文件"><a href="#vim备份文件" class="headerlink" title="vim备份文件"></a>vim备份文件</h3><p><strong>Hole：</strong>vim是Linux下用的最多的编辑器，当用户在编辑文件但意外退出时，会在当前目录下生成一个备份文件，文件名格式为：<code>.文件名.swp</code>。</p>
+<blockquote>
+<p>关键词：.文件名.swp</p>
+</blockquote>
+<p>该文件用来备份缓冲区中的内容，即退出时的文件内容。第一次退出生成的文件名：<code>*.swp</code>，第二次：<code>*swo</code>，第三次：<code>*swn</code>。或者还含有<code>*un.文件名.swp</code>类型的备份文件。</p>
+<p><strong>思路：</strong>恢复意外退出的文件，来获取<strong>flag</strong>。</p>
+<h3 id="常规文件"><a href="#常规文件" class="headerlink" title="常规文件"></a>常规文件</h3><blockquote>
+<ul>
+<li>robot.txt                             爬虫君子协议，不可爬取的内容，往往包含有flag。</li>
+</ul>
+</blockquote>
+<blockquote>
+<ul>
+<li>readme.md                        记录CMS（内容管理系统）版本等信息，或许有线索。 </li>
+</ul>
+</blockquote>
+<blockquote>
+<ul>
+<li><a href="http://www.zip/rar/tar.gz">www.zip/rar/tar.gz</a>            往往是网站的备份源码，获取会有包含flag。</li>
+</ul>
+</blockquote>
+<blockquote>
+<p><del>待补充ing</del></p>
+</blockquote>
+<h3 id="其他"><a href="#其他" class="headerlink" title="其他"></a>其他</h3><p>–往往实际环境中，网站的备份是网站域名的压缩包–</p>
+<h2 id="Banner识别"><a href="#Banner识别" class="headerlink" title="Banner识别"></a>Banner识别</h2><p><strong>Banner信息：</strong>服务器对外显示的一些基础信息。</p>
+<h3 id="自行搜集指纹库"><a href="#自行搜集指纹库" class="headerlink" title="自行搜集指纹库"></a>自行搜集指纹库</h3><blockquote>
+<p>Tools：</p>
+<blockquote>
+<p>kail：         预装了 whatweb </p>
+<p>Usage：    whatweb [options] &lt;URLs&gt;</p>
+<p>例如：        whatweb <a href="http://www.baidu.com/">http://www.baidu.com</a> -v（-v显示的更详细）</p>
+</blockquote>
+<blockquote>
+<p>Chrome扩展：Wappalyzer</p>
+</blockquote>
+<blockquote>
+<p>在线识别网站：</p>
+<p><a href="http://whatweb.bugscaner.com/look/">在线指纹识别</a></p>
+<p><a href="https://pentest.gdpcisa.org/whatcms">whatcms</a></p>
+<p><a href="https://www.yunsee.cn/">云悉指纹识别</a></p>
+</blockquote>
+</blockquote>
+<h3 id="其他-1"><a href="#其他-1" class="headerlink" title="其他"></a>其他</h3><p>–或者通过404返回页面的也可以用来判断指纹信息嘞？–</p>
+]]></content>
+      <categories>
+        <category>CTF</category>
+      </categories>
+      <tags>
+        <tag>flag</tag>
+        <tag>后缀</tag>
+        <tag>备份</tag>
+        <tag>Banner</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>CTF:从0到1——札记（一）</title>
-    <url>/2021/07/09/CTF%E4%BB%8E0%E5%88%B01%E2%80%94%E2%80%94%E6%9C%AD%E8%AE%B0%EF%BC%88%E4%B8%80%EF%BC%89/</url>
+    <url>/2021/07/09/CTF-0-2-1(1)/</url>
     <content><![CDATA[<h2 id="札记（一）——-敏感目录泄露"><a href="#札记（一）——-敏感目录泄露" class="headerlink" title="札记（一）——  敏感目录泄露"></a>札记（一）——  敏感目录泄露</h2><h3 id="1-git泄露"><a href="#1-git泄露" class="headerlink" title="1. git泄露"></a>1. git泄露</h3><blockquote>
 <p><strong>git</strong>：<u>开源的分布式版本控制系统，可以有效、高速地处理从很小到非常大的项目版本管理。</u></p>
 </blockquote>
@@ -220,7 +283,7 @@ img<span class="token punctuation">.</span>height <span class="token operator">=
 </blockquote>
 <h4 id="开源工具"><a href="#开源工具" class="headerlink" title="开源工具"></a>开源工具</h4><p><a href="https://github.com/maurosoria/dirseach">dirsearch</a></p>
 <p><del>嘤嘤嘤，老是下载失败，使用魔法了也还是失败，哭了</del></p>
-<p><img src="CTF%E4%BB%8E0%E5%88%B01%E2%80%94%E2%80%94%E6%9C%AD%E8%AE%B0%EF%BC%88%E4%B8%80%EF%BC%89.%5Cdirsearch-failed.png" alt="dirsearch-failed" loading="lazy"></p>
+<p><img src="CTF-0-2-1(1)./dirsearch-failed.png" alt="dirsearch-failed" loading="lazy"></p>
 ]]></content>
       <categories>
         <category>CTF</category>
@@ -228,69 +291,6 @@ img<span class="token punctuation">.</span>height <span class="token operator">=
       <tags>
         <tag>flag</tag>
         <tag>tool</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>CTF:从0到1——札记（二）</title>
-    <url>/2021/07/09/2021-07-09-CTF%E4%BB%8E0%E5%88%B01%E2%80%94%E2%80%94%E6%9C%AD%E8%AE%B0%EF%BC%88%E4%BA%8C%EF%BC%89/</url>
-    <content><![CDATA[<h1 id="札记（二）——-敏感备份文件、Banner识别"><a href="#札记（二）——-敏感备份文件、Banner识别" class="headerlink" title="札记（二）——  敏感备份文件、Banner识别"></a>札记（二）——  敏感备份文件、Banner识别</h1><h2 id="敏感备份文件"><a href="#敏感备份文件" class="headerlink" title="敏感备份文件"></a>敏感备份文件</h2><h3 id="gedit备份文件"><a href="#gedit备份文件" class="headerlink" title="gedit备份文件"></a>gedit备份文件</h3><p><strong>Hole：</strong>Linux下，用gedit编辑器保存后，当前目录下会生成一个后缀为<code>“~”</code>的文件（如<code>index.php~</code>），其内容就是刚刚编辑过的内容。</p>
-<blockquote>
-<p>关键词：后缀 ~ </p>
-</blockquote>
-<p>通过访问这个后缀的内容，即可获取源代码或<strong>flag</strong>。</p>
-<h3 id="vim备份文件"><a href="#vim备份文件" class="headerlink" title="vim备份文件"></a>vim备份文件</h3><p><strong>Hole：</strong>vim是Linux下用的最多的编辑器，当用户在编辑文件但意外退出时，会在当前目录下生成一个备份文件，文件名格式为：<code>.文件名.swp</code>。</p>
-<blockquote>
-<p>关键词：.文件名.swp</p>
-</blockquote>
-<p>该文件用来备份缓冲区中的内容，即退出时的文件内容。第一次退出生成的文件名：<code>*.swp</code>，第二次：<code>*swo</code>，第三次：<code>*swn</code>。或者还含有<code>*un.文件名.swp</code>类型的备份文件。</p>
-<p><strong>思路：</strong>恢复意外退出的文件，来获取<strong>flag</strong>。</p>
-<h3 id="常规文件"><a href="#常规文件" class="headerlink" title="常规文件"></a>常规文件</h3><blockquote>
-<ul>
-<li>robot.txt                             爬虫君子协议，不可爬取的内容，往往包含有flag。</li>
-</ul>
-</blockquote>
-<blockquote>
-<ul>
-<li>readme.md                        记录CMS（内容管理系统）版本等信息，或许有线索。 </li>
-</ul>
-</blockquote>
-<blockquote>
-<ul>
-<li><a href="http://www.zip/rar/tar.gz">www.zip/rar/tar.gz</a>            往往是网站的备份源码，获取会有包含flag。</li>
-</ul>
-</blockquote>
-<blockquote>
-<p><del>待补充ing</del></p>
-</blockquote>
-<h3 id="其他"><a href="#其他" class="headerlink" title="其他"></a>其他</h3><p>–往往实际环境中，网站的备份是网站域名的压缩包–</p>
-<h2 id="Banner识别"><a href="#Banner识别" class="headerlink" title="Banner识别"></a>Banner识别</h2><p><strong>Banner信息：</strong>服务器对外显示的一些基础信息。</p>
-<h3 id="自行搜集指纹库"><a href="#自行搜集指纹库" class="headerlink" title="自行搜集指纹库"></a>自行搜集指纹库</h3><blockquote>
-<p>Tools：</p>
-<blockquote>
-<p>kail：         预装了 whatweb </p>
-<p>Usage：    whatweb [options] &lt;URLs&gt;</p>
-<p>例如：        whatweb <a href="http://www.baidu.com/">http://www.baidu.com</a> -v（-v显示的更详细）</p>
-</blockquote>
-<blockquote>
-<p>Chrome扩展：Wappalyzer</p>
-</blockquote>
-<blockquote>
-<p>在线识别网站：</p>
-<p><a href="http://whatweb.bugscaner.com/look/">在线指纹识别</a></p>
-<p><a href="https://pentest.gdpcisa.org/whatcms">whatcms</a></p>
-<p><a href="https://www.yunsee.cn/">云悉指纹识别</a></p>
-</blockquote>
-</blockquote>
-<h3 id="其他-1"><a href="#其他-1" class="headerlink" title="其他"></a>其他</h3><p>–或者通过404返回页面的也可以用来判断指纹信息嘞？–</p>
-]]></content>
-      <categories>
-        <category>CTF</category>
-      </categories>
-      <tags>
-        <tag>flag</tag>
-        <tag>后缀</tag>
-        <tag>备份</tag>
-        <tag>Banner</tag>
       </tags>
   </entry>
 </search>
