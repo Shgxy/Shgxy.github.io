@@ -5222,8 +5222,10 @@ method：post,get 提交方式
 </span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>style</span><span class="token punctuation">></span></span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
 <h5 id="基本选择器小结"><a href="#基本选择器小结" class="headerlink" title="基本选择器小结"></a>基本选择器小结</h5><div class="success">
->不遵循就近原则，固定的
-    >id选择器 > 类选择器 > 标签选择器
+> 不遵循就近原则，固定的
+>
+> id选择器 > 类选择器 > 标签选择器
+
 </div>
 
 
