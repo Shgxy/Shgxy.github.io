@@ -5180,27 +5180,143 @@ method：post,get 提交方式
 <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>body</span><span class="token punctuation">></span></span>
 <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>html</span><span class="token punctuation">></span></span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
-<p>建议使用此种规范：</p>
+<p>建议使用此种规范，即独立于 html 的 css 文件：</p>
 <p><img src="https://shgxy.github.io/2021/08/10/front_end/image-20210811150152075.png" alt="image-20210811150152075" loading="lazy"></p>
-<br>
+<h3 id="选择器"><a href="#选择器" class="headerlink" title="选择器"></a>选择器</h3><blockquote>
+<p>作用：选择页面上的某一个或者某一类元素。</p>
+</blockquote>
+<h4 id="基本选择器"><a href="#基本选择器" class="headerlink" title="基本选择器"></a>基本选择器</h4><h5 id="标签选择器：“全部”"><a href="#标签选择器：“全部”" class="headerlink" title="标签选择器：“全部”"></a>标签选择器：“全部”</h5><blockquote>
+<p>会选择到页面上所有的这个标签的元素。</p>
+</blockquote>
+<pre class="line-numbers language-html" data-language="html"><code class="language-html"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>style</span><span class="token punctuation">></span></span><span class="token style"><span class="token language-css">
+    <span class="token selector">h1</span><span class="token punctuation">&#123;</span>
+      <span class="token property">color</span><span class="token punctuation">:</span> green<span class="token punctuation">;</span>
+      <span class="token property">background-color</span><span class="token punctuation">:</span> darkcyan<span class="token punctuation">;</span>
+      <span class="token property">border-radius</span><span class="token punctuation">:</span> 10px<span class="token punctuation">;</span>
+    <span class="token punctuation">&#125;</span>
+    <span class="token selector">p</span><span class="token punctuation">&#123;</span>
+      <span class="token property">color</span><span class="token punctuation">:</span> brown<span class="token punctuation">;</span>
+    <span class="token punctuation">&#125;</span>
+</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>style</span><span class="token punctuation">></span></span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
-<br>
 
-<br>
 
-<br>
+<h5 id="类选择器：“部分”"><a href="#类选择器：“部分”" class="headerlink" title="类选择器：“部分”"></a>类选择器：“部分”</h5><blockquote>
+<p>仅同一类名的类会更改样式。</p>
+</blockquote>
+<p>如 class 名为”shgxy”。</p>
+<pre class="line-numbers language-html" data-language="html"><code class="language-html"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>style</span><span class="token punctuation">></span></span><span class="token style"><span class="token language-css">
+    <span class="token selector">.shgxy</span><span class="token punctuation">&#123;</span>
+      <span class="token property">color</span><span class="token punctuation">:</span>black<span class="token punctuation">;</span>
+    <span class="token punctuation">&#125;</span>
+</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>style</span><span class="token punctuation">></span></span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
-<br>
+<h5 id="id选择器：“唯一”"><a href="#id选择器：“唯一”" class="headerlink" title="id选择器：“唯一”"></a>id选择器：“唯一”</h5><blockquote>
+<p>id必须保证全局唯一。</p>
+</blockquote>
+<p>如 id 名为”blog”。</p>
+<pre class="line-numbers language-html" data-language="html"><code class="language-html"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>style</span><span class="token punctuation">></span></span><span class="token style"><span class="token language-css">
+    <span class="token selector">#blog</span><span class="token punctuation">&#123;</span>
+      <span class="token property">color</span><span class="token punctuation">:</span> green<span class="token punctuation">;</span>
+    <span class="token punctuation">&#125;</span>
+</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>style</span><span class="token punctuation">></span></span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
-<br>
+<h5 id="基本选择器小结"><a href="#基本选择器小结" class="headerlink" title="基本选择器小结"></a>基本选择器小结</h5><div class="success">
+>不遵循就近原则，固定的
+>>id选择器 > 类选择器 > 标签选择器
+</div>
 
-<br>
 
-<br>
 
-<br>
+<h4 id="层次选择器"><a href="#层次选择器" class="headerlink" title="层次选择器"></a>层次选择器</h4><h5 id="后代选择器"><a href="#后代选择器" class="headerlink" title="后代选择器"></a>后代选择器</h5><blockquote>
+<p>在某个元素后面。</p>
+</blockquote>
+<p>如 p 后面。</p>
+<pre class="line-numbers language-css" data-language="css"><code class="language-css"><span class="token comment">/*后代选择器*/</span>
+<span class="token selector">body p</span><span class="token punctuation">&#123;</span>
+	<span class="token property">background-color</span><span class="token punctuation">:</span> green<span class="token punctuation">;</span>
+<span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
 
-<br>
+<h5 id="子选择器"><a href="#子选择器" class="headerlink" title="子选择器"></a>子选择器</h5><blockquote>
+<p>一代。衍生的不算。</p>
+</blockquote>
+<pre class="line-numbers language-css" data-language="css"><code class="language-css"><span class="token comment">/*子选择器*/</span>
+<span class="token selector">body > p</span><span class="token punctuation">&#123;</span>
+  <span class="token property">background-color</span><span class="token punctuation">:</span> green<span class="token punctuation">;</span>
+<span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
+
+<h5 id="相邻兄弟选择器"><a href="#相邻兄弟选择器" class="headerlink" title="相邻兄弟选择器"></a>相邻兄弟选择器</h5><blockquote>
+<p>同辈。选择定义有 active 的下一个标签。只向下选择一个。</p>
+</blockquote>
+<pre class="line-numbers language-css" data-language="css"><code class="language-css"><span class="token selector">.active + p</span><span class="token punctuation">&#123;</span>
+	<span class="token property">background-color</span><span class="token punctuation">:</span> green<span class="token punctuation">;</span>
+<span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+
+<h5 id="通用兄弟选择器"><a href="#通用兄弟选择器" class="headerlink" title="通用兄弟选择器"></a>通用兄弟选择器</h5><blockquote>
+<p>当前选中元素的向下的所有兄弟元素。</p>
+</blockquote>
+<pre class="line-numbers language-css" data-language="css"><code class="language-css"><span class="token selector">.active ~ p</span><span class="token punctuation">&#123;</span>
+	<span class="token property">background-color</span><span class="token punctuation">:</span> green<span class="token punctuation">;</span>
+<span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+
+
+
+<h4 id="结构-伪类选择器"><a href="#结构-伪类选择器" class="headerlink" title="结构 伪类选择器"></a>结构 伪类选择器</h4><details>
+  <summary>格式</summary>
+h1
+    <br>
+p1
+    <br>
+p2
+    <br>
+p3
+    <br>
+&nbsp;&nbsp;- li1<br>
+&nbsp;&nbsp;- li2<br>
+&nbsp;&nbsp;- li3<br>
+</details>
+
+<p>ul下的第一个li：</p>
+<pre class="line-numbers language-html" data-language="html"><code class="language-html"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>style</span><span class="token punctuation">></span></span><span class="token style"><span class="token language-css">
+  <span class="token selector">ul li:first-child</span><span class="token punctuation">&#123;</span>
+    <span class="token property">background-color</span><span class="token punctuation">:</span> green<span class="token punctuation">;</span>
+  <span class="token punctuation">&#125;</span>
+</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>style</span><span class="token punctuation">></span></span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p>ul下最后一个li：</p>
+<pre class="line-numbers language-html" data-language="html"><code class="language-html"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>style</span><span class="token punctuation">></span></span><span class="token style"><span class="token language-css">
+  <span class="token selector">ul li:last-child</span><span class="token punctuation">&#123;</span>
+    <span class="token property">background-color</span><span class="token punctuation">:</span> green<span class="token punctuation">;</span>
+  <span class="token punctuation">&#125;</span>
+</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>style</span><span class="token punctuation">></span></span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p>第一个p标签：</p>
+<pre class="line-numbers language-html" data-language="html"><code class="language-html"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>style</span><span class="token punctuation">></span></span><span class="token style"><span class="token language-css">
+  <span class="token comment">/*选中p1：定位到父元素，选择当前的第一个元素
+    选择当前p元素的父级元素，选中父级元素的第一个，并且是当前元素才生效。
+    */</span>
+  <span class="token selector">p:nth-child(1)</span><span class="token punctuation">&#123;</span>
+    <span class="token property">background-color</span><span class="token punctuation">:</span> green<span class="token punctuation">;</span>
+  <span class="token punctuation">&#125;</span>
+</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>style</span><span class="token punctuation">></span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>style</span><span class="token punctuation">></span></span><span class="token style"><span class="token language-css">
+  <span class="token comment">/*选择父节点下第二个标签为p的元素*/</span>
+  <span class="token selector">p:nth-of-type(1)</span><span class="token punctuation">&#123;</span>
+    <span class="token property">background-color</span><span class="token punctuation">:</span> green<span class="token punctuation">;</span>
+  <span class="token punctuation">&#125;</span>
+</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>style</span><span class="token punctuation">></span></span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+
+
+
+
+
+
+
+
+
+
+
 
 <br>
 
