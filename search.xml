@@ -5931,161 +5931,183 @@ flush <span class="token keyword">privileges</span><span class="token punctuatio
 <ul>
 <li><p>使用 数据库：</p>
 <ul>
-<li><pre><code class="sql">USE `school`;
--- 如果表名或者字段名是一个特殊字符，就需要用``
--- 例如：SELECT `user` FROM student;
-</code></pre>
-</li>
+<li>```sql<br>USE <code>school</code>;<br>– 如果表名或者字段名是一个特殊字符，就需要用``<br>– 例如：SELECT <code>user</code> FROM student;<pre class="line-numbers language-none"><code class="language-none">
+
+
+### 数据库的列类型
+
+#### 数值
+
+| 类型        | 字节  | 备注                         |
+| ----------- | :---: | ---------------------------- |
+| tinyint     |   1   | 十分小的数据，性别、状态     |
+| smallint    |   2   | 较小的数据                   |
+| mediumint   |   3   | 中等大小的数据               |
+| **int**     | **4** | 常用，**标准的整数**         |
+| bigint      |   8   | 较大的数据，对应 long        |
+| float       |   4   | 浮点数                       |
+| double      |   8   | 浮点数                       |
+| **decimal** | 2-17  | 字符串形式的浮点数，金融计算 |
+
+
+
+#### 字符串
+
+| 类型        |  长度   | 备注                     |
+| ----------- | :-----: | ------------------------ |
+| char        |  0~255  | 字符串固定大小           |
+| **varchar** | 0~65535 | 可变字符串，常用，string |
+| tinytext    |   255   | 微型文本                 |
+| text        |  65535  | 文本串                   |
+
+
+
+#### 时间日期
+
+| 类型          | 格式                | 备注                           |
+| ------------- | ------------------- | ------------------------------ |
+| date          | YYYY-MM-DD          |                                |
+| time          | HH:mm:ss            |                                |
+| **datetime**  | YYYY-MM-DD HH:mm:ss | 常用                           |
+| **timestamp** |                     | 时间戳，1970.1.1到现在的毫秒数 |
+| year          |                     | 年份                           |
+
+
+
+#### null
+
+- 空，未知；
+- 不要使用NULL进行运算。
+
+### 数据库的字段属性
+
+- unsigned
+
+  - 无符号整数，该字段不能为负数。
+
+- zerofill
+
+  - 0填充，不足的位数补零；
+
+  - 例如长度为5的int，赋值为1，存储为00001。
+
+- 自增
+
+  - 应用于整数，通常用于设计唯一的主键。自动在上一条记录的基础上+1(默认，可改，通常设置为唯一的主键，且必须是整数类型)。
+
+- 非空 not null
+
+  - 设置成not null后，不赋值会报错。
+
+- default
+
+  - 默认值。
+
+![image-20210819205635668](.&#x2F;image-20210819205635668.png)
+
+### SQL创建数据库表
+
+&gt; 表名和字段尽量用&#96;&#96;包裹，字符串使用单引号或双引号包裹，语句后加逗号。
+&gt;
+&gt; PRIMARY KEY（主键）写在下面，一目了然。
+
+&#96;&#96;&#96;sql
+CREATE TABLE if not EXISTS &#96;student&#96;(
+    &#96;id&#96; INT(4) NOT NULL AUTO_INCREMENT COMMENT &#39;学号&#39;,
+    &#96;name&#96; VARCHAR(30) NOT NULL DEFAULT &#39;匿名&#39; COMMENT &#39;姓名&#39;,
+    &#96;pwd&#96; VARCHAR(20) NOT NULL DEFAULT &#39;123456&#39; COMMENT &#39;密码&#39;,
+    &#96;gender&#96; VARCHAR(2) NOT NULL DEFAULT &#39;女&#39; COMMENT &#39;性别&#39;,
+    &#96;birth&#96; DATETIME DEFAULT NULL COMMENT &#39;生日&#39;,
+    &#96;address&#96; VARCHAR(100) DEFAULT NULL COMMENT &#39;家庭住址&#39;,
+    &#96;email&#96; VARCHAR(30) DEFAULT NULL COMMENT &#39;邮箱&#39;,
+    PRIMARY KEY(&#96;id&#96;)
+)ENGINE&#x3D;INNODB DEFAULT CHARSET&#x3D;utf8<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre></li>
 </ul>
 </li>
 </ul>
-<h3 id="数据库的列类型"><a href="#数据库的列类型" class="headerlink" title="数据库的列类型"></a>数据库的列类型</h3><h4 id="数值"><a href="#数值" class="headerlink" title="数值"></a>数值</h4><table>
+<h4 id="格式"><a href="#格式" class="headerlink" title="格式"></a>格式</h4><pre class="line-numbers language-sql" data-language="sql"><code class="language-sql"><span class="token keyword">CREATE</span> <span class="token keyword">TABLE</span> <span class="token punctuation">[</span><span class="token keyword">if</span> <span class="token operator">not</span> <span class="token keyword">EXISTS</span><span class="token punctuation">]</span> <span class="token punctuation">`</span>表名<span class="token punctuation">`</span><span class="token punctuation">(</span>
+    <span class="token punctuation">`</span>字段名<span class="token punctuation">`</span> 列类型 <span class="token punctuation">[</span>属性<span class="token punctuation">]</span> <span class="token punctuation">[</span>索引<span class="token punctuation">]</span> <span class="token punctuation">[</span>注释<span class="token punctuation">]</span><span class="token punctuation">,</span>
+    <span class="token punctuation">`</span>字段名<span class="token punctuation">`</span> 列类型 <span class="token punctuation">[</span>属性<span class="token punctuation">]</span> <span class="token punctuation">[</span>索引<span class="token punctuation">]</span> <span class="token punctuation">[</span>注释<span class="token punctuation">]</span><span class="token punctuation">,</span>
+    <span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span>
+    <span class="token punctuation">`</span>字段名<span class="token punctuation">`</span> 列类型 <span class="token punctuation">[</span>属性<span class="token punctuation">]</span> <span class="token punctuation">[</span>索引<span class="token punctuation">]</span> <span class="token punctuation">[</span>注释<span class="token punctuation">]</span>
+<span class="token punctuation">)</span><span class="token punctuation">[</span>表类型<span class="token punctuation">]</span><span class="token punctuation">[</span>字符集<span class="token punctuation">]</span><span class="token punctuation">[</span>表注释<span class="token punctuation">]</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p>注意：</p>
+<ul>
+<li>逆向操作：可以通过<code>SHOW CREATE DATABASE xxx</code>或<code>SHOW CREATE TABLE xxx</code>的方式得到对应的SQL创建语句。</li>
+</ul>
+<p><img src="./image-20210819224817239.png" alt="image-20210819224817239" loading="lazy"></p>
+<h3 id="MYISAM-和-INNODB-的区别"><a href="#MYISAM-和-INNODB-的区别" class="headerlink" title="MYISAM 和 INNODB 的区别"></a>MYISAM 和 INNODB 的区别</h3><table>
 <thead>
 <tr>
-<th>类型</th>
-<th align="center">字节</th>
-<th>备注</th>
+<th></th>
+<th align="center">MYISAM（早年使用）</th>
+<th align="center">INNODB（默认使用）</th>
 </tr>
 </thead>
 <tbody><tr>
-<td>tinyint</td>
-<td align="center">1</td>
-<td>十分小的数据，性别、状态</td>
+<td>事务支持</td>
+<td align="center">X</td>
+<td align="center">支持</td>
 </tr>
 <tr>
-<td>smallint</td>
-<td align="center">2</td>
-<td>较小的数据</td>
+<td>数据行锁定</td>
+<td align="center">X</td>
+<td align="center">支持</td>
 </tr>
 <tr>
-<td>mediumint</td>
-<td align="center">3</td>
-<td>中等大小的数据</td>
+<td>外键约束</td>
+<td align="center">X</td>
+<td align="center">支持</td>
 </tr>
 <tr>
-<td><strong>int</strong></td>
-<td align="center"><strong>4</strong></td>
-<td>常用，<strong>标准的整数</strong></td>
+<td>全文索引</td>
+<td align="center">支持</td>
+<td align="center">X</td>
 </tr>
 <tr>
-<td>bigint</td>
-<td align="center">8</td>
-<td>较大的数据，对应 long</td>
-</tr>
-<tr>
-<td>float</td>
-<td align="center">4</td>
-<td>浮点数</td>
-</tr>
-<tr>
-<td>double</td>
-<td align="center">8</td>
-<td>浮点数</td>
-</tr>
-<tr>
-<td><strong>decimal</strong></td>
-<td align="center">2-17</td>
-<td>字符串形式的浮点数，金融计算</td>
+<td>表空间大小</td>
+<td align="center">较小</td>
+<td align="center">≈2倍MYISAM</td>
 </tr>
 </tbody></table>
-<h4 id="字符串"><a href="#字符串" class="headerlink" title="字符串"></a>字符串</h4><table>
-<thead>
-<tr>
-<th>类型</th>
-<th align="center">长度</th>
-<th>备注</th>
-</tr>
-</thead>
-<tbody><tr>
-<td>char</td>
-<td align="center">0~255</td>
-<td>字符串固定大小</td>
-</tr>
-<tr>
-<td><strong>varchar</strong></td>
-<td align="center">0~65535</td>
-<td>可变字符串，常用，string</td>
-</tr>
-<tr>
-<td>tinytext</td>
-<td align="center">255</td>
-<td>微型文本</td>
-</tr>
-<tr>
-<td>text</td>
-<td align="center">65535</td>
-<td>文本串</td>
-</tr>
-</tbody></table>
-<h4 id="时间日期"><a href="#时间日期" class="headerlink" title="时间日期"></a>时间日期</h4><table>
-<thead>
-<tr>
-<th>类型</th>
-<th>格式</th>
-<th>备注</th>
-</tr>
-</thead>
-<tbody><tr>
-<td>date</td>
-<td>YYYY-MM-DD</td>
-<td></td>
-</tr>
-<tr>
-<td>time</td>
-<td>HH:mm:ss</td>
-<td></td>
-</tr>
-<tr>
-<td><strong>datetime</strong></td>
-<td>YYYY-MM-DD HH:mm:ss</td>
-<td>常用</td>
-</tr>
-<tr>
-<td><strong>timestamp</strong></td>
-<td></td>
-<td>时间戳，1970.1.1到现在的毫秒数</td>
-</tr>
-<tr>
-<td>year</td>
-<td></td>
-<td>年份</td>
-</tr>
-</tbody></table>
-<h4 id="null"><a href="#null" class="headerlink" title="null"></a>null</h4><ul>
-<li>空，未知；</li>
-<li>不要使用NULL进行运算。</li>
-</ul>
-<h3 id="数据库的字段属性"><a href="#数据库的字段属性" class="headerlink" title="数据库的字段属性"></a>数据库的字段属性</h3><ul>
-<li><p>unsigned</p>
 <ul>
-<li>无符号整数，该字段不能为负数。</li>
+<li>MYISAM    节约空间，速度较快</li>
+<li>INNODB    安全性高，支持事务处理，多表多用户操作</li>
 </ul>
-</li>
-<li><p>zerofill</p>
-<ul>
-<li><p>0填充，不足的位数补零；</p>
-</li>
-<li><p>例如长度为5的int，赋值为1，存储为00001。</p>
-</li>
-</ul>
-</li>
-<li><p>自增</p>
-<ul>
-<li>应用于整数，通常用于设计唯一的主键。自动在上一条记录的基础上+1(默认，可改，通常设置为唯一的主键，且必须是整数类型)。</li>
-</ul>
-</li>
-<li><p>非空 not null</p>
-<ul>
-<li>设置成not null后，不赋值会报错。</li>
-</ul>
-</li>
-<li><p>default</p>
-<ul>
-<li>默认值。</li>
-</ul>
-</li>
-</ul>
-<p><img src="./image-20210819205635668.png" alt="image-20210819205635668" loading="lazy"></p>
+<p>数据库依然是文件，一个数据库对应data目录下的一个文件夹。可以通过下面的命令找到data的位置</p>
+<pre class="line-numbers language-none"><code class="language-none">mysql&gt; show &#96;&#96;global&#96; &#96;variables &#96;&#96;like&#96; &#96;&quot;%datadir%&quot;&#96; &#96;;<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<p>INNODB引擎的数据表会生成<code>.ibd</code>文件，MYISAM引擎的数据库会生成<code>.MYD</code>/<code>.MYI</code>/<code>.sdi</code>三个文件。</p>
+<p><img src="./image-20210819224437623.png" alt="image-20210819224437623" loading="lazy"></p>
+<br/>
+
+<br/>
+
+<br/>
+
+<br/>
+
+<br/>
+
+<p><br/><br/></p>
+<p><br/><br/></p>
+<br/>
+
+<br/>
+
+<br/>
+
+<br/>
+
+<br/>
+
+<br/>
+
+<br/>
+
+<script type="text/javascript" id="clustrmaps" src="//clustrmaps.com/map_v2.js?d=fRe3dZxKMgkafUZzHwCmPjhicbubwlqSFibe-AmJETk&cl=ffffff&w=a"></script>
+
 ]]></content>
       <categories>
         <category>MySQL</category>
