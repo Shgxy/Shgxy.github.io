@@ -6443,29 +6443,42 @@ ADD CONSTRAINT 约束名 FOREIGN KEY(作为外键的字段) REFERENCES 主表名
 </ul>
 <pre class="line-numbers language-sql" data-language="sql"><code class="language-sql"><span class="token keyword">select</span> <span class="token operator">*</span> <span class="token keyword">from</span> student <span class="token keyword">where</span> <span class="token punctuation">`</span>studentno<span class="token punctuation">`</span> <span class="token operator">in</span> <span class="token punctuation">(</span><span class="token number">1001</span><span class="token punctuation">,</span><span class="token number">1002</span><span class="token punctuation">,</span><span class="token number">1000</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 
-<h3 id="联表查询"><a href="#联表查询" class="headerlink" title="联表查询"></a>联表查询</h3><p><img src="https://jazzylee.github.io/2021/07/27/mysql/v2-ab43140ca2435d62d1bf501051cc558a_r.jpg" alt="查看源图像" loading="lazy"></p>
+<h3 id="联表查询"><a href="#联表查询" class="headerlink" title="联表查询"></a>联表查询</h3><p><img src="./v2-ab43140ca2435d62d1bf501051cc558a_r.jpg" alt="查看源图像" loading="lazy"></p>
+<p><img src="MySQL/v2-ab43140ca2435d62d1bf501051cc558a_r.jpg" alt="查看源图像" loading="lazy"></p>
 <blockquote>
+<p>JOIN</p>
 <p>联表查询要确定交叉点，即两个表中什么字段是相同的</p>
 </blockquote>
-<pre class="line-numbers language-sql" data-language="sql"><code class="language-sql"><span class="token keyword">select</span> S<span class="token punctuation">.</span><span class="token punctuation">`</span>studentno<span class="token punctuation">`</span><span class="token punctuation">,</span><span class="token punctuation">`</span>studentname<span class="token punctuation">`</span><span class="token punctuation">,</span><span class="token punctuation">`</span>subjectno<span class="token punctuation">`</span><span class="token punctuation">,</span><span class="token punctuation">`</span>studentresult<span class="token punctuation">`</span> 
-<span class="token keyword">from</span> <span class="token punctuation">`</span>student<span class="token punctuation">`</span> S<span class="token comment">-- 别名是S，AS可以省略</span>
-<span class="token keyword">INNER</span> <span class="token keyword">JOIN</span> <span class="token punctuation">`</span>result<span class="token punctuation">`</span> R<span class="token comment">-- 别名是R</span>
-<span class="token keyword">ON</span> S<span class="token punctuation">.</span><span class="token punctuation">`</span>studentno<span class="token punctuation">`</span><span class="token operator">=</span>R<span class="token punctuation">.</span><span class="token punctuation">`</span>studentno<span class="token punctuation">`</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
+<p><img src="./image-20210820230335511.png" alt="image-20210820230335511" loading="lazy"></p>
+<pre class="line-numbers language-sql" data-language="sql"><code class="language-sql"><span class="token comment">-- 图中：3</span>
+<span class="token keyword">select</span> s<span class="token punctuation">.</span>studentNo<span class="token punctuation">,</span>studentName<span class="token punctuation">,</span>subjectNo<span class="token punctuation">,</span>studentResult <span class="token comment">-- 两张表都含有studentNo，此处指定查询`s`表下的studentNo</span>
+<span class="token keyword">from</span> student <span class="token keyword">as</span> s	<span class="token comment">-- as 可以省略</span>
+<span class="token keyword">inner</span> <span class="token keyword">join</span> result <span class="token keyword">as</span> r
+<span class="token keyword">where</span> s<span class="token punctuation">.</span>studentNo <span class="token operator">=</span> r<span class="token punctuation">.</span>studentNo<span class="token punctuation">;</span>	<span class="token comment">-- where 用于单个，on 用于批量</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
-<p>左右连接的”左”和”右”其实就是书写的顺序，写在前面的就是左，写在后面的就是右。</p>
-<p>以左连接为例如果A LEFT JOIN B，那么连接的结果中，A中的记录都会显示出来，无论B中有没有对应的记录。</p>
-<p>多表查询实例</p>
+<p><img src="./image-20210820214710155.png" alt="image-20210820214710155" loading="lazy"></p>
+<p>左右连接的 ”左” 和 ”右” 其实就是<strong>书写的顺序</strong>，写在前面的就是左，写在后面的就是右。</p>
+<p>以左连接为例如果<code>A left join B</code>，那么连接的结果中，A中的记录都会显示出来，无论B中有没有对应的记录。</p>
+<div class="success">
+
+<blockquote>
+<p>即以谁为主去匹配另一张表</p>
+</blockquote>
+</div>
+
+<p><img src="./image-20210820230042230.png" alt="image-20210820230042230" loading="lazy"></p>
+<p>多表查询实例：</p>
 <pre class="line-numbers language-sql" data-language="sql"><code class="language-sql"><span class="token keyword">select</span> S<span class="token punctuation">.</span><span class="token punctuation">`</span>studentno<span class="token punctuation">`</span><span class="token punctuation">,</span><span class="token punctuation">`</span>studentname<span class="token punctuation">`</span><span class="token punctuation">,</span>SUB<span class="token punctuation">.</span><span class="token punctuation">`</span>subjectname<span class="token punctuation">`</span><span class="token punctuation">,</span><span class="token punctuation">`</span>studentresult<span class="token punctuation">`</span> 
 <span class="token keyword">from</span> <span class="token punctuation">`</span>student<span class="token punctuation">`</span> S
-<span class="token keyword">RIGHT</span> <span class="token keyword">JOIN</span> <span class="token punctuation">`</span>result<span class="token punctuation">`</span> R
-<span class="token keyword">ON</span> S<span class="token punctuation">.</span><span class="token punctuation">`</span>studentno<span class="token punctuation">`</span><span class="token operator">=</span>R<span class="token punctuation">.</span><span class="token punctuation">`</span>studentno<span class="token punctuation">`</span>
-<span class="token keyword">INNER</span> <span class="token keyword">JOIN</span> <span class="token punctuation">`</span>subject<span class="token punctuation">`</span> SUB
-<span class="token keyword">ON</span> SUB<span class="token punctuation">.</span><span class="token punctuation">`</span>subjectno<span class="token punctuation">`</span><span class="token operator">=</span>R<span class="token punctuation">.</span><span class="token punctuation">`</span>subjectno<span class="token punctuation">`</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<span class="token keyword">right</span> <span class="token keyword">join</span> <span class="token punctuation">`</span>result<span class="token punctuation">`</span> R
+<span class="token keyword">on</span> S<span class="token punctuation">.</span><span class="token punctuation">`</span>studentno<span class="token punctuation">`</span><span class="token operator">=</span> R<span class="token punctuation">.</span><span class="token punctuation">`</span>studentno<span class="token punctuation">`</span>
+<span class="token keyword">inner</span> <span class="token keyword">join</span> <span class="token punctuation">`</span>subject<span class="token punctuation">`</span> SUB
+<span class="token keyword">on</span> SUB<span class="token punctuation">.</span><span class="token punctuation">`</span>subjectno<span class="token punctuation">`</span><span class="token operator">=</span> R<span class="token punctuation">.</span><span class="token punctuation">`</span>subjectno<span class="token punctuation">`</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
 <p>联表查询的核心在于：</p>
 <ul>
-<li>要查哪些数据=&gt;SELECT</li>
-<li>从哪几个表中查=&gt;FROM ，JOIN ON</li>
+<li>要查哪些数据 =&gt; SELECT</li>
+<li>从哪几个表中查 =&gt; FROM ，JOIN ON</li>
 </ul>
 <br/>
 
