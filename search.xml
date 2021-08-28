@@ -263,7 +263,56 @@
 <p><img src="./image-20210828181219067.png" alt="image-20210828181219067" loading="lazy"></p>
 <br/>
 
-<h2 id="椭圆曲线"><a href="#椭圆曲线" class="headerlink" title="椭圆曲线"></a>椭圆曲线</h2>]]></content>
+<h2 id="椭圆曲线"><a href="#椭圆曲线" class="headerlink" title="椭圆曲线"></a><strong>椭圆曲线</strong></h2><h2 id="哈希函数"><a href="#哈希函数" class="headerlink" title="哈希函数"></a><strong>哈希函数</strong></h2><p><img src="D:\blog\shgxyBlog\source_posts\Cryptology\image-20210828211253549.png" alt="image-20210828211253549" loading="lazy"></p>
+<p><img src="D:\blog\shgxyBlog\source_posts\Cryptology\image-20210828211324566.png" alt="image-20210828211324566" loading="lazy"></p>
+<h3 id="常见的密码学哈希函数"><a href="#常见的密码学哈希函数" class="headerlink" title="常见的密码学哈希函数"></a>常见的密码学哈希函数</h3><blockquote>
+<p>MD5</p>
+</blockquote>
+<br/>
+
+<blockquote>
+<p>SHA-0、SHA-1、SHA-1、</p>
+</blockquote>
+<blockquote>
+<p>SHA-2：SHA-256 SHA-512 删节版SHA-224 SHA-384</p>
+</blockquote>
+<blockquote>
+<p>SHA-3</p>
+</blockquote>
+<h2 id="区块链-简介"><a href="#区块链-简介" class="headerlink" title="区块链 简介"></a>区块链 简介</h2><blockquote>
+<p>计算Nonce。这玩意很难搞出来。</p>
+</blockquote>
+<p><img src="./image-20210829001330455.png" alt="image-20210829001330455" loading="lazy"></p>
+<br/>
+
+<h3 id="挖矿"><a href="#挖矿" class="headerlink" title="挖矿"></a>挖矿</h3><p><img src="./image-20210829001556357.png" alt="image-20210829001556357" loading="lazy"></p>
+<p><img src="./image-20210829001655930.png" alt="image-20210829001655930" loading="lazy"></p>
+<p><img src="./image-20210829010744215.png" alt="image-20210829010744215" loading="lazy"></p>
+<br/>
+
+<h2 id="冲突与双花攻击"><a href="#冲突与双花攻击" class="headerlink" title="冲突与双花攻击"></a><strong>冲突与双花攻击</strong></h2><h3 id="冲突"><a href="#冲突" class="headerlink" title="冲突"></a>冲突</h3><p><img src="./image-20210829011517300.png" alt="image-20210829011517300" loading="lazy"></p>
+<blockquote>
+<p>解决方案：信任最长的区块链。</p>
+</blockquote>
+<p><img src="./image-20210829011342114.png" alt="image-20210829011342114" loading="lazy"></p>
+<p><img src="./image-20210829011411006.png" alt="image-20210829011411006" loading="lazy"></p>
+<h3 id="双花攻击"><a href="#双花攻击" class="headerlink" title="双花攻击"></a>双花攻击</h3><p><img src="./image-20210829011634706.png" alt="image-20210829011634706" loading="lazy"></p>
+<p><img src="./image-20210829011746257.png" alt="image-20210829011746257" loading="lazy"></p>
+<p><img src="./image-20210829011809646.png" alt="image-20210829011809646" loading="lazy"></p>
+<p><img src="./image-20210829011823884.png" alt="image-20210829011823884" loading="lazy"></p>
+<blockquote>
+<p>解决办法：</p>
+<p>卖家需确认交易进入区块链后，才可实施交易。</p>
+</blockquote>
+<p><img src="./image-20210829011954026.png" alt="image-20210829011954026" loading="lazy"></p>
+<p><img src="./image-20210829012047338.png" alt="image-20210829012047338" loading="lazy"></p>
+<blockquote>
+<p>解决办法：</p>
+<p>建议卖家需确认交易得到6个以上的区块确认之后再信任买家。</p>
+</blockquote>
+<br/>
+
+<h2 id="替换密码"><a href="#替换密码" class="headerlink" title="替换密码"></a><strong>替换密码</strong></h2>]]></content>
       <categories>
         <category>Cryptology</category>
       </categories>
