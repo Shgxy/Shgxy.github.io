@@ -7064,8 +7064,31 @@ jframe<span class="token punctuation">.</span><span class="token function">add</
 <li>轻量级应用服务器：用于中小型系统和并发访问用户不是很多的场合下使用</li>
 <li>实际运行<strong>JSP</strong>页面和<strong>Servlet</strong>，目前Tomcat最新版本为<strong>10.0.5</strong></li>
 </ul>
-<p><img src="/image-20210831175101104.png" alt="image-20210831175101104" loading="lazy"></p>
-<p><img src="./image-20210831175111621.png" alt="image-20210831175111621" loading="lazy"></p>
+<br/>
+
+<h1 id="Tomcat"><a href="#Tomcat" class="headerlink" title="Tomcat"></a>Tomcat</h1><p><a href="https://tomcat.apache.org/download-90.cgi">Tomcat下载链接</a></p>
+<img src="./image-20210831181629573.png" alt="image-20210831181629573" style="zoom: 33%;" / loading="lazy">
+
+<p><del>无需安装，选择路径解压即可使用。</del></p>
+<img src="./image-20210831182626778.png" alt="image-20210831182626778" style="zoom:67%;" / loading="lazy">
+
+
+
+<h2 id="Tomcat的启动与配置"><a href="#Tomcat的启动与配置" class="headerlink" title="Tomcat的启动与配置"></a>Tomcat的启动与配置</h2><p><strong>启动：</strong>双击 –&gt; <code>bin/startup.bat</code></p>
+<p>浏览器输入：<a href="http://localhost:8080/%EF%BC%8C%E6%98%BE%E7%A4%BA%E9%A1%B5%E9%9D%A2%E5%A6%82%E4%B8%8B%E5%8D%B3%E8%A1%A8%E7%A4%BA%E6%88%90%E5%8A%9F%E3%80%82">http://localhost:8080/，显示页面如下即表示成功。</a></p>
+<img src="./image-20210831183430704.png" alt="image-20210831183430704" style="zoom: 33%;" / loading="lazy">
+
+
+
+
+
+
+
+
+
+
+
+<p>├─webapps<br>│  ├─docs<br>│  │  ├─annotationapi<br>│  │  ├─api<br>│  │  ├─appdev<br>│  │  │  └─sample<br>│  │  │      ├─docs<br>│  │  │      ├─src<br>│  │  │      │  └─mypackage<br>│  │  │      └─web<br>│  │  │          ├─images<br>│  │  │          └─WEB-INF<br>│  │  ├─architecture<br>│  │  │  ├─requestProcess<br>│  │  │  └─startup<br>│  │  ├─config<br>│  │  ├─elapi<br>│  │  ├─images<br>│  │  │  └─fonts<br>│  │  ├─jaspicapi<br>│  │  ├─jspapi<br>│  │  ├─servletapi<br>│  │  ├─tribes<br>│  │  ├─WEB-INF<br>│  │  └─websocketapi</p>
 ]]></content>
       <categories>
         <category>Java</category>
