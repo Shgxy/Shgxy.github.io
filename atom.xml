@@ -6,7 +6,7 @@
   <link href="https://shgxy.github.io.git/atom.xml" rel="self"/>
   
   <link href="https://shgxy.github.io.git/"/>
-  <updated>2021-08-28T17:22:41.374Z</updated>
+  <updated>2021-08-31T09:36:08.200Z</updated>
   <id>https://shgxy.github.io.git/</id>
   
   <author>
@@ -15,6 +15,32 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>JavaWeb</title>
+    <link href="https://shgxy.github.io.git/2021/08/31/JavaWeb/"/>
+    <id>https://shgxy.github.io.git/2021/08/31/JavaWeb/</id>
+    <published>2021-08-31T09:27:00.000Z</published>
+    <updated>2021-08-31T09:36:08.200Z</updated>
+    
+    <content type="html"><![CDATA[<h1 id="Java-Web"><a href="#Java-Web" class="headerlink" title="Java Web"></a>Java Web</h1><h2 id="Web服务器"><a href="#Web服务器" class="headerlink" title="Web服务器"></a>Web服务器</h2><blockquote><p>服务器是一种被动的操作，用来处理用户的一些请求和给用户一些响应信息。</p></blockquote><p><strong>IIS：</strong></p><ul><li>微软</li><li>ASP，Windows自带</li></ul><p><strong>Tomcat：</strong></p><p><img src="./Tomcat.png" alt="Tomcat" loading="lazy"></p><ul><li>性能稳定，开源免费</li><li>轻量级应用服务器：用于中小型系统和并发访问用户不是很多的场合下使用</li><li>实际运行<strong>JSP</strong>页面和<strong>Servlet</strong>，目前Tomcat最新版本为<strong>10.0.5</strong></li></ul><p><img src="JavaWeb/tom.png" alt="点击查看源网页" loading="lazy"></p>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;h1 id=&quot;Java-Web&quot;&gt;&lt;a href=&quot;#Java-Web&quot; class=&quot;headerlink&quot; title=&quot;Java Web&quot;&gt;&lt;/a&gt;Java Web&lt;/h1&gt;&lt;h2 id=&quot;Web服务器&quot;&gt;&lt;a href=&quot;#Web服务器&quot; class=&quot;headerli</summary>
+      
+    
+    
+    
+    <category term="Java" scheme="https://shgxy.github.io.git/categories/Java/"/>
+    
+    <category term="Web" scheme="https://shgxy.github.io.git/categories/Java/Web/"/>
+    
+    
+    <category term="notes" scheme="https://shgxy.github.io.git/tags/notes/"/>
+    
+  </entry>
   
   <entry>
     <title>Cryptology</title>
