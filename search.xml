@@ -7042,7 +7042,14 @@ jframe<span class="token punctuation">.</span><span class="token function">add</
   <entry>
     <title>JavaWeb</title>
     <url>/2021/08/31/JavaWeb/</url>
-    <content><![CDATA[<h1 id="Java-Web"><a href="#Java-Web" class="headerlink" title="Java Web"></a>Java Web</h1><h2 id="Web服务器"><a href="#Web服务器" class="headerlink" title="Web服务器"></a>Web服务器</h2><blockquote>
+    <content><![CDATA[<table>
+<thead>
+<tr>
+<th align="center"><strong>Java Web</strong></th>
+</tr>
+</thead>
+</table>
+<h1 id="Web服务器"><a href="#Web服务器" class="headerlink" title="Web服务器"></a>Web服务器</h1><blockquote>
 <p>服务器是一种被动的操作，用来处理用户的一些请求和给用户一些响应信息。</p>
 </blockquote>
 <p><strong>IIS：</strong></p>
@@ -7050,14 +7057,15 @@ jframe<span class="token punctuation">.</span><span class="token function">add</
 <li>微软</li>
 <li>ASP，Windows自带</li>
 </ul>
-<p><strong>Tomcat：</strong></p>
+<p><strong>Tomcat：</strong>(手撸Tomcat)</p>
 <p><img src="./Tomcat.png" alt="Tomcat" loading="lazy"></p>
 <ul>
 <li>性能稳定，开源免费</li>
 <li>轻量级应用服务器：用于中小型系统和并发访问用户不是很多的场合下使用</li>
 <li>实际运行<strong>JSP</strong>页面和<strong>Servlet</strong>，目前Tomcat最新版本为<strong>10.0.5</strong></li>
 </ul>
-<p><img src="JavaWeb/tom.png" alt="点击查看源网页" loading="lazy"></p>
+<p><img src="/image-20210831175101104.png" alt="image-20210831175101104" loading="lazy"></p>
+<p><img src="./image-20210831175111621.png" alt="image-20210831175111621" loading="lazy"></p>
 ]]></content>
       <categories>
         <category>Java</category>
