@@ -7049,7 +7049,7 @@ jframe<span class="token punctuation">.</span><span class="token function">add</
 </tr>
 </thead>
 </table>
-<h1 id="Web服务器"><a href="#Web服务器" class="headerlink" title="Web服务器"></a>Web服务器</h1><blockquote>
+<h1 id="Web服务器"><a href="#Web服务器" class="headerlink" title="Web服务器"></a><strong>Web服务器</strong></h1><blockquote>
 <p>服务器是一种被动的操作，用来处理用户的一些请求和给用户一些响应信息。</p>
 </blockquote>
 <p><strong>IIS：</strong></p>
@@ -7066,29 +7066,23 @@ jframe<span class="token punctuation">.</span><span class="token function">add</
 </ul>
 <br/>
 
-<h1 id="Tomcat"><a href="#Tomcat" class="headerlink" title="Tomcat"></a>Tomcat</h1><p><a href="https://tomcat.apache.org/download-90.cgi">Tomcat下载链接</a></p>
-<img src="./image-20210831181629573.png" alt="image-20210831181629573" style="zoom: 33%;" / loading="lazy">
+<h1 id="Tomcat"><a href="#Tomcat" class="headerlink" title="Tomcat"></a><strong>Tomcat</strong></h1><p><a href="https://tomcat.apache.org/download-90.cgi">Tomcat下载链接</a></p>
+<img src="./image-20210831181629573.png" alt="image-20210831181629573" style="zoom: 67%;" / loading="lazy">
 
 <p><del>无需安装，选择路径解压即可使用。</del></p>
 <img src="./image-20210831182626778.png" alt="image-20210831182626778" style="zoom:67%;" / loading="lazy">
 
 
 
-<h2 id="Tomcat的启动与配置"><a href="#Tomcat的启动与配置" class="headerlink" title="Tomcat的启动与配置"></a>Tomcat的启动与配置</h2><p><strong>启动：</strong>双击 –&gt; <code>bin/startup.bat</code></p>
-<p>浏览器输入：<a href="http://localhost:8080/%EF%BC%8C%E6%98%BE%E7%A4%BA%E9%A1%B5%E9%9D%A2%E5%A6%82%E4%B8%8B%E5%8D%B3%E8%A1%A8%E7%A4%BA%E6%88%90%E5%8A%9F%E3%80%82">http://localhost:8080/，显示页面如下即表示成功。</a></p>
-<img src="./image-20210831183430704.png" alt="image-20210831183430704" style="zoom: 33%;" / loading="lazy">
+<h2 id="Tomcat的启动与配置"><a href="#Tomcat的启动与配置" class="headerlink" title="Tomcat的启动与配置"></a>Tomcat的启动与配置</h2><p><strong>启动：</strong>双击 –&gt; <code>bin/startup.bat</code>，弹出窗口</p>
+<p>浏览器输入：<a href="http://localhost:8080/">http://localhost:8080/</a> ，显示页面如下即表示成功。</p>
+<img src="./image-20210831183430704.png" alt="image-20210831183430704" style="zoom: 67%;" / loading="lazy">
 
+<p><strong>关闭：</strong>点击<code>X</code>，或者双击 –&gt; <code>bin/shutdown.bat</code></p>
+<br>
 
-
-
-
-
-
-
-
-
-
-<p>├─webapps<br>│  ├─docs<br>│  │  ├─annotationapi<br>│  │  ├─api<br>│  │  ├─appdev<br>│  │  │  └─sample<br>│  │  │      ├─docs<br>│  │  │      ├─src<br>│  │  │      │  └─mypackage<br>│  │  │      └─web<br>│  │  │          ├─images<br>│  │  │          └─WEB-INF<br>│  │  ├─architecture<br>│  │  │  ├─requestProcess<br>│  │  │  └─startup<br>│  │  ├─config<br>│  │  ├─elapi<br>│  │  ├─images<br>│  │  │  └─fonts<br>│  │  ├─jaspicapi<br>│  │  ├─jspapi<br>│  │  ├─servletapi<br>│  │  ├─tribes<br>│  │  ├─WEB-INF<br>│  │  └─websocketapi</p>
+<p><strong>核心配置文件：</strong></p>
+<p><img src="./image-20210831184409167.png" alt="image-20210831184409167" loading="lazy"></p>
 ]]></content>
       <categories>
         <category>Java</category>
