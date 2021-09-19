@@ -249,7 +249,7 @@ flush <span class="token keyword">privileges</span><span class="token punctuatio
 </ul>
 </li>
 </ul>
-<p><img src="./image-20210819205635668.png" alt="image-20210819205635668" loading="lazy"></p>
+<p><img src="./image-20210819205635668.png" alt="image-20210819205635668"></p>
 <h3 id="SQL创建数据库表"><a href="#SQL创建数据库表" class="headerlink" title="SQL创建数据库表"></a>SQL创建数据库表</h3><blockquote>
 <p>表名和字段尽量用``包裹，字符串使用单引号或双引号包裹，语句后加逗号。</p>
 <p>PRIMARY KEY（主键）写在下面，一目了然。</p>
@@ -276,7 +276,7 @@ flush <span class="token keyword">privileges</span><span class="token punctuatio
 <ul>
 <li>逆向操作：可以通过<code>SHOW CREATE DATABASE xxx</code>或<code>SHOW CREATE TABLE xxx</code>的方式得到对应的SQL创建语句。</li>
 </ul>
-<p><img src="./image-20210819224817239.png" alt="image-20210819224817239" loading="lazy"></p>
+<p><img src="./image-20210819224817239.png" alt="image-20210819224817239"></p>
 <h3 id="MYISAM-和-INNODB-的区别"><a href="#MYISAM-和-INNODB-的区别" class="headerlink" title="MYISAM 和 INNODB 的区别"></a>MYISAM 和 INNODB 的区别</h3><table>
 <thead>
 <tr>
@@ -319,7 +319,7 @@ flush <span class="token keyword">privileges</span><span class="token punctuatio
 <pre class="line-numbers language-ini" data-language="ini"><code class="language-ini">mysql> show ``global` `variables ``like` `"%datadir%"` `;<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 
 <p>INNODB引擎的数据表会生成<code>.ibd</code>文件，MYISAM引擎的数据库会生成<code>.MYD</code>/<code>.MYI</code>/<code>.sdi</code>三个文件。</p>
-<p><img src="./image-20210819224437623.png" alt="image-20210819224437623" loading="lazy"></p>
+<p><img src="./image-20210819224437623.png" alt="image-20210819224437623"></p>
 <hr>
 <h3 id="修改删除表"><a href="#修改删除表" class="headerlink" title="修改删除表"></a>修改删除表</h3><ul>
 <li>修改表名：rename</li>
@@ -388,7 +388,7 @@ flush <span class="token keyword">privileges</span><span class="token punctuatio
 <span class="token punctuation">)</span> <span class="token keyword">ENGINE</span><span class="token operator">=</span><span class="token keyword">InnoDB</span> <span class="token keyword">AUTO_INCREMENT</span><span class="token operator">=</span><span class="token number">2</span> <span class="token keyword">DEFAULT</span> <span class="token keyword">CHARSET</span><span class="token operator">=</span>utf8<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
 <p>删除有外键关系的表的时候，必须要先删除引用别人的表（从表），再删除被引用的表（主表）。</p>
-<p><img src="./image-20210820155758554.png" alt="image-20210820155758554" loading="lazy"></p>
+<p><img src="./image-20210820155758554.png" alt="image-20210820155758554"></p>
 <p>方式二：</p>
 <p>👍推荐使用。</p>
 <p>创建表成功后，添加外键约束。</p>
@@ -460,7 +460,7 @@ ADD CONSTRAINT 约束名 FOREIGN KEY(作为外键的字段) REFERENCES 主表名
 
 <pre class="line-numbers language-sql" data-language="sql"><code class="language-sql"><span class="token keyword">insert</span> <span class="token keyword">into</span> <span class="token punctuation">`</span>grade<span class="token punctuation">`</span> <span class="token keyword">values</span> <span class="token punctuation">(</span><span class="token string">'215'</span><span class="token punctuation">,</span><span class="token string">'研一'</span><span class="token punctuation">)</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 
-<p><img src="./image-20210820164913275.png" alt="image-20210820164913275" loading="lazy"></p>
+<p><img src="./image-20210820164913275.png" alt="image-20210820164913275"></p>
 <h4 id="修改"><a href="#修改" class="headerlink" title="修改"></a>修改</h4><pre class="line-numbers language-sql" data-language="sql"><code class="language-sql"><span class="token comment">--  update 表名 set 字段=新值,字段=新值,... where [条件]</span>
 	<span class="token keyword">update</span> <span class="token punctuation">`</span>students<span class="token punctuation">`</span> <span class="token keyword">set</span> <span class="token punctuation">`</span>name<span class="token punctuation">`</span><span class="token operator">=</span><span class="token string">'shgxy'</span> <span class="token keyword">where</span> id <span class="token operator">=</span> <span class="token number">212</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
 
@@ -551,27 +551,27 @@ ADD CONSTRAINT 约束名 FOREIGN KEY(作为外键的字段) REFERENCES 主表名
 <li><p>查询表的全部信息</p>
 <pre class="line-numbers language-sql" data-language="sql"><code class="language-sql"><span class="token keyword">select</span> <span class="token operator">*</span> <span class="token keyword">from</span> 表名<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre></li>
 </ul>
-<p><img src="./image-20210820192430328.png" alt="image-20210820192430328" loading="lazy"></p>
+<p><img src="./image-20210820192430328.png" alt="image-20210820192430328"></p>
 <ul>
 <li><p>查询指定字段</p>
 <pre class="line-numbers language-sql" data-language="sql"><code class="language-sql"><span class="token keyword">select</span> <span class="token punctuation">`</span>StudentNo<span class="token punctuation">`</span><span class="token punctuation">,</span><span class="token punctuation">`</span>StudentName<span class="token punctuation">`</span> <span class="token keyword">from</span> student<span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre></li>
 </ul>
-<p><img src="./image-20210820192257511.png" alt="image-20210820192257511" loading="lazy"></p>
+<p><img src="./image-20210820192257511.png" alt="image-20210820192257511"></p>
 <ul>
 <li><p>别名，使得查询的指定字段在显示时换一个名称，别名不需要引号。也可以给表起别名</p>
 <pre class="line-numbers language-sql" data-language="sql"><code class="language-sql"><span class="token keyword">select</span> <span class="token punctuation">`</span>StudentNo<span class="token punctuation">`</span> <span class="token keyword">as</span> 学号<span class="token punctuation">,</span><span class="token punctuation">`</span>StudentName<span class="token punctuation">`</span> <span class="token keyword">as</span> 姓名 <span class="token keyword">from</span> student<span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre></li>
 </ul>
-<p><img src="./image-20210820192640643.png" alt="image-20210820192640643" loading="lazy"></p>
+<p><img src="./image-20210820192640643.png" alt="image-20210820192640643"></p>
 <ul>
 <li><p>✔<code>Concat</code>函数：在查询结果中拼接字符串</p>
 <pre class="line-numbers language-sql" data-language="sql"><code class="language-sql"><span class="token keyword">select</span> concat<span class="token punctuation">(</span><span class="token string">'姓名：'</span><span class="token punctuation">,</span>StudentName<span class="token punctuation">)</span> <span class="token keyword">as</span> 新名字 <span class="token keyword">from</span> student<span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 
-<p><img src="./image-20210820193259391.png" alt="image-20210820193259391" loading="lazy"></p>
+<p><img src="./image-20210820193259391.png" alt="image-20210820193259391"></p>
 </li>
 <li><p>去重</p>
 <pre class="line-numbers language-sql" data-language="sql"><code class="language-sql"><span class="token keyword">select</span> <span class="token keyword">distinct</span> <span class="token punctuation">`</span>StudentNo<span class="token punctuation">`</span> <span class="token keyword">as</span> 去重后的学号 <span class="token keyword">from</span> student<span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 
-<p><img src="./image-20210820194351336.png" alt="image-20210820194351336" loading="lazy"></p>
+<p><img src="./image-20210820194351336.png" alt="image-20210820194351336"></p>
 </li>
 <li><p>select其他操作</p>
 <pre class="line-numbers language-sql" data-language="sql"><code class="language-sql"><span class="token keyword">select</span> version<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>	<span class="token comment">-- 查询mysql版本</span>
@@ -579,7 +579,7 @@ ADD CONSTRAINT 约束名 FOREIGN KEY(作为外键的字段) REFERENCES 主表名
 <span class="token keyword">select</span> @<span class="token variable">@auto_increment_increment</span><span class="token punctuation">;</span>	<span class="token comment">-- 查询自增步长</span>
 <span class="token keyword">select</span> <span class="token punctuation">`</span>StudentNo<span class="token punctuation">`</span><span class="token punctuation">,</span><span class="token punctuation">`</span>StudentResult<span class="token punctuation">`</span> <span class="token keyword">as</span> 送礼前<span class="token punctuation">,</span><span class="token punctuation">`</span>StudentResult<span class="token punctuation">`</span><span class="token operator">+</span><span class="token number">1</span> <span class="token keyword">as</span> 送礼后 <span class="token keyword">from</span> <span class="token punctuation">`</span>result<span class="token punctuation">`</span><span class="token punctuation">;</span>	<span class="token comment">-- 将选到的记录修改后显示</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
 
-<p><img src="./image-20210820194836051.png" alt="image-20210820194836051" loading="lazy"></p>
+<p><img src="./image-20210820194836051.png" alt="image-20210820194836051"></p>
 </li>
 </ul>
 <h3 id="where检索符合条件的记录"><a href="#where检索符合条件的记录" class="headerlink" title="where检索符合条件的记录"></a>where检索符合条件的记录</h3><ul>
@@ -611,21 +611,21 @@ ADD CONSTRAINT 约束名 FOREIGN KEY(作为外键的字段) REFERENCES 主表名
 </ul>
 <pre class="line-numbers language-sql" data-language="sql"><code class="language-sql"><span class="token keyword">select</span> <span class="token operator">*</span> <span class="token keyword">from</span> student <span class="token keyword">where</span> <span class="token punctuation">`</span>studentno<span class="token punctuation">`</span> <span class="token operator">in</span> <span class="token punctuation">(</span><span class="token number">1001</span><span class="token punctuation">,</span><span class="token number">1002</span><span class="token punctuation">,</span><span class="token number">1000</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 
-<h3 id="联表查询"><a href="#联表查询" class="headerlink" title="联表查询"></a>联表查询</h3><p><img src="./v2-ab43140ca2435d62d1bf501051cc558a_r.jpg" alt="查看源图像" loading="lazy"></p>
-<p><img src="MySQL/v2-ab43140ca2435d62d1bf501051cc558a_r.jpg" alt="查看源图像" loading="lazy"></p>
+<h3 id="联表查询"><a href="#联表查询" class="headerlink" title="联表查询"></a>联表查询</h3><p><img src="./v2-ab43140ca2435d62d1bf501051cc558a_r.jpg" alt="查看源图像"></p>
+<p><img src="MySQL/v2-ab43140ca2435d62d1bf501051cc558a_r.jpg" alt="查看源图像"></p>
 <blockquote>
 <p>JOIN</p>
 <p>联表查询要确定交叉点，即两个表中什么字段是相同的</p>
 <p>ON</p>
 </blockquote>
-<p><img src="./image-20210820230335511.png" alt="image-20210820230335511" loading="lazy"></p>
+<p><img src="./image-20210820230335511.png" alt="image-20210820230335511"></p>
 <pre class="line-numbers language-sql" data-language="sql"><code class="language-sql"><span class="token comment">-- 图中：3</span>
 <span class="token keyword">select</span> s<span class="token punctuation">.</span>studentNo<span class="token punctuation">,</span>studentName<span class="token punctuation">,</span>subjectNo<span class="token punctuation">,</span>studentResult <span class="token comment">-- 两张表都含有studentNo，此处指定查询`s`表下的studentNo</span>
 <span class="token keyword">from</span> student <span class="token keyword">as</span> s	<span class="token comment">-- as 可以省略</span>
 <span class="token keyword">inner</span> <span class="token keyword">join</span> result <span class="token keyword">as</span> r
 <span class="token keyword">where</span> s<span class="token punctuation">.</span>studentNo <span class="token operator">=</span> r<span class="token punctuation">.</span>studentNo<span class="token punctuation">;</span>	<span class="token comment">-- where 用于单个，on 用于批量</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
-<p><img src="./image-20210820214710155.png" alt="image-20210820214710155" loading="lazy"></p>
+<p><img src="./image-20210820214710155.png" alt="image-20210820214710155"></p>
 <p>左右连接的 ”左” 和 ”右” 其实就是<strong>书写的顺序</strong>，写在前面的就是左，写在后面的就是右。</p>
 <p>以左连接为例如果<code>A left join B</code>，那么连接的结果中，A中的记录都会显示出来，无论B中有没有对应的记录。</p>
 <div class="success">
@@ -635,7 +635,7 @@ ADD CONSTRAINT 约束名 FOREIGN KEY(作为外键的字段) REFERENCES 主表名
 </blockquote>
 </div>
 
-<p><img src="./image-20210820230042230.png" alt="image-20210820230042230" loading="lazy"></p>
+<p><img src="./image-20210820230042230.png" alt="image-20210820230042230"></p>
 <p>多表查询实例：</p>
 <pre class="line-numbers language-sql" data-language="sql"><code class="language-sql"><span class="token keyword">select</span> S<span class="token punctuation">.</span><span class="token punctuation">`</span>studentno<span class="token punctuation">`</span><span class="token punctuation">,</span><span class="token punctuation">`</span>studentname<span class="token punctuation">`</span><span class="token punctuation">,</span>SUB<span class="token punctuation">.</span><span class="token punctuation">`</span>subjectname<span class="token punctuation">`</span><span class="token punctuation">,</span><span class="token punctuation">`</span>studentresult<span class="token punctuation">`</span> 
 <span class="token keyword">from</span> <span class="token punctuation">`</span>student<span class="token punctuation">`</span> S
@@ -890,7 +890,7 @@ mysql -u用户名 -p密码 库名 表名1 表名2 …… <span class="token oper
 
 <h2 id="数据库设计三大范式"><a href="#数据库设计三大范式" class="headerlink" title="数据库设计三大范式"></a>数据库设计三大范式</h2><p><del>似乎不是程序员的事儿。</del></p>
 <h2 id="JDBC"><a href="#JDBC" class="headerlink" title="JDBC"></a>JDBC</h2><h3 id="扫盲"><a href="#扫盲" class="headerlink" title="扫盲"></a>扫盲</h3><p>程序通过数据库驱动和数据库交互。SUN公司提出了Java操作数据库的规范，</p>
-<p><img src="https://jazzylee.github.io/2021/07/27/mysql/image-20210729194449975.png" alt="image-20210729194449975" loading="lazy"></p>
+<p><img src="https://jazzylee.github.io/2021/07/27/mysql/image-20210729194449975.png" alt="image-20210729194449975"></p>
 <h3 id="Demo"><a href="#Demo" class="headerlink" title="Demo"></a>Demo</h3><p><code>jdbcStudy</code>数据库代码：</p>
 <pre class="line-numbers language-sql" data-language="sql"><code class="language-sql"><span class="token keyword">CREATE</span> <span class="token keyword">DATABASE</span> <span class="token punctuation">`</span>jdbcStudy<span class="token punctuation">`</span> <span class="token keyword">CHARACTER</span> <span class="token keyword">SET</span> utf8 <span class="token keyword">COLLATE</span> utf8_general_ci<span class="token punctuation">;</span>
 
@@ -954,7 +954,7 @@ mysql -u用户名 -p密码 库名 表名1 表名2 …… <span class="token oper
 <span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
 <p><strong>步骤总结：</strong></p>
-<p><img src="./image-20210824204302037.png" alt="image-20210824204302037" loading="lazy"></p>
+<p><img src="./image-20210824204302037.png" alt="image-20210824204302037"></p>
 <div class="success">
 
 <blockquote>
@@ -972,10 +972,10 @@ mysql -u用户名 -p密码 库名 表名1 表名2 …… <span class="token oper
 </ul>
 </li>
 </ul>
-<p><img src="./image-20210824212701895.png" alt="image-20210824212701895" loading="lazy"></p>
-<p><img src="./image-20210824213217006.png" alt="image-20210824213217006" loading="lazy"></p>
-<h3 id="Statement对象"><a href="#Statement对象" class="headerlink" title="Statement对象"></a>Statement对象</h3><p><img src="./image-20210824213508533.png" alt="image-20210824213508533" loading="lazy"></p>
-<p><img src="./image-20210824213621395.png" alt="image-20210824213621395" loading="lazy"></p>
+<p><img src="./image-20210824212701895.png" alt="image-20210824212701895"></p>
+<p><img src="./image-20210824213217006.png" alt="image-20210824213217006"></p>
+<h3 id="Statement对象"><a href="#Statement对象" class="headerlink" title="Statement对象"></a>Statement对象</h3><p><img src="./image-20210824213508533.png" alt="image-20210824213508533"></p>
+<p><img src="./image-20210824213621395.png" alt="image-20210824213621395"></p>
 <h3 id="SQL简单注入"><a href="#SQL简单注入" class="headerlink" title="SQL简单注入"></a>SQL简单注入</h3><blockquote>
 <p>SQL注入攻击是通过操作输入来修改SQL语句，用以达到执行代码对WEB服务器进行攻击的方法。</p>
 </blockquote>

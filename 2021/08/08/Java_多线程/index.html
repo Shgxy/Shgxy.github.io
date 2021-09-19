@@ -145,7 +145,7 @@
     <span class="token punctuation">&#125;</span>
 <span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
-<h4 id="实现-Callable-接口"><a href="#实现-Callable-接口" class="headerlink" title="实现 Callable 接口"></a>实现 Callable 接口</h4><p><img src="C:\Users\Shgxy\AppData\Roaming\Typora\typora-user-images\image-20210807205935539.png" alt="image-20210807205935539" loading="lazy"></p>
+<h4 id="实现-Callable-接口"><a href="#实现-Callable-接口" class="headerlink" title="实现 Callable 接口"></a>实现 Callable 接口</h4><p><img src="C:\Users\Shgxy\AppData\Roaming\Typora\typora-user-images\image-20210807205935539.png" alt="image-20210807205935539"></p>
 <h3 id="静态代理"><a href="#静态代理" class="headerlink" title="静态代理"></a>静态代理</h3><blockquote>
 <ul>
 <li>真实对象（you）和代理对象（jhCo）都要实现同一个接口，即 Marry</li>
@@ -233,9 +233,9 @@ interface ILike&#123;
 
 
 
-<h2 id="Day-02"><a href="#Day-02" class="headerlink" title="Day_02"></a>Day_02</h2><h3 id="线程状态"><a href="#线程状态" class="headerlink" title="线程状态"></a>线程状态</h3><p><img src="C:\Users\Shgxy\AppData\Roaming\Typora\typora-user-images\image-20210807225333523.png" alt="image-20210807225333523" loading="lazy"></p>
-<p><img src="https://jazzylee.github.io/2021/07/14/JavaMmltithreading/image-20210714143750812.png" alt="盗图" loading="lazy"></p>
-<h4 id="线程方法"><a href="#线程方法" class="headerlink" title="线程方法"></a>线程方法</h4><p><img src="C:\Users\Shgxy\AppData\Roaming\Typora\typora-user-images\image-20210808131953021.png" alt="image-20210808131953021" loading="lazy"></p>
+<h2 id="Day-02"><a href="#Day-02" class="headerlink" title="Day_02"></a>Day_02</h2><h3 id="线程状态"><a href="#线程状态" class="headerlink" title="线程状态"></a>线程状态</h3><p><img src="C:\Users\Shgxy\AppData\Roaming\Typora\typora-user-images\image-20210807225333523.png" alt="image-20210807225333523"></p>
+<p><img src="https://jazzylee.github.io/2021/07/14/JavaMmltithreading/image-20210714143750812.png" alt="盗图"></p>
+<h4 id="线程方法"><a href="#线程方法" class="headerlink" title="线程方法"></a>线程方法</h4><p><img src="C:\Users\Shgxy\AppData\Roaming\Typora\typora-user-images\image-20210808131953021.png" alt="image-20210808131953021"></p>
 <h4 id="停止线程"><a href="#停止线程" class="headerlink" title="停止线程"></a>停止线程</h4><ul>
 <li><del>stop()，destroy()</del>，已废弃；</li>
 <li>推荐线程自己停下来；</li>
@@ -542,7 +542,7 @@ interface ILike&#123;
 <span class="token keyword">synchronized</span> <span class="token punctuation">(</span><span class="token class-name">ObjAA</span><span class="token punctuation">)</span><span class="token punctuation">&#123;</span> <span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
 <p>即：拆成两把锁。</p>
-<p><img src="C:\Users\Shgxy\AppData\Roaming\Typora\typora-user-images\image-20210808213835649.png" alt="image-20210808213835649" loading="lazy"></p>
+<p><img src="C:\Users\Shgxy\AppData\Roaming\Typora\typora-user-images\image-20210808213835649.png" alt="image-20210808213835649"></p>
 <h4 id="Lock-锁"><a href="#Lock-锁" class="headerlink" title="Lock 锁"></a>Lock 锁</h4><p>通过显式定义同步锁对象来实现同步。同步锁使用Lock对象充当。</p>
 <pre class="line-numbers language-java" data-language="java"><code class="language-java"><span class="token keyword">private</span> <span class="token keyword">final</span> <span class="token class-name">ReentrantLock</span> lock_1 <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">ReentrantLock</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
 
@@ -559,7 +559,7 @@ interface ILike&#123;
 
 
 <h3 id="线程协作"><a href="#线程协作" class="headerlink" title="线程协作"></a>线程协作</h3><p>盗图：</p>
-<p><img src="https://jazzylee.github.io/2021/07/14/JavaMmltithreading/image-20210714222110390.png" alt="image-20210714222110390" loading="lazy"></p>
+<p><img src="https://jazzylee.github.io/2021/07/14/JavaMmltithreading/image-20210714222110390.png" alt="image-20210714222110390"></p>
 <blockquote>
 <p>注意：</p>
 <p>均是 Object 类的方法，都只能在同步方法或者同步代码块中使用，否则会抛出异常llegalMonitorStateException。</p>
@@ -663,8 +663,8 @@ interface ILike&#123;
 
 
 <h4 id="信号灯法"><a href="#信号灯法" class="headerlink" title="信号灯法"></a>信号灯法</h4><p>生产者消费者问题：信号灯法，标志位解决。</p>
-<h4 id="线程池"><a href="#线程池" class="headerlink" title="线程池"></a>线程池</h4><p><img src="C:\Users\Shgxy\AppData\Roaming\Typora\typora-user-images\image-20210808223246604.png" alt="image-20210808223246604" loading="lazy"></p>
-<p><img src="C:\Users\Shgxy\AppData\Roaming\Typora\typora-user-images\image-20210808223412311.png" alt="image-20210808223412311" loading="lazy"></p>
+<h4 id="线程池"><a href="#线程池" class="headerlink" title="线程池"></a>线程池</h4><p><img src="C:\Users\Shgxy\AppData\Roaming\Typora\typora-user-images\image-20210808223246604.png" alt="image-20210808223246604"></p>
+<p><img src="C:\Users\Shgxy\AppData\Roaming\Typora\typora-user-images\image-20210808223412311.png" alt="image-20210808223412311"></p>
 <ul>
 <li><p>ExecutorService：线程池接口；</p>
 <ul>
