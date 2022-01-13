@@ -1,0 +1,144 @@
+<!DOCTYPE html><html lang="zh-CN"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0"><meta name="theme-color" content="#0078E7"><meta name="author" content="ifDo7"><meta name="copyright" content="ifDo7"><meta name="generator" content="Hexo 5.4.0"><meta name="theme" content="hexo-theme-yun"><title>ifDo7's Blog</title><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@900&amp;display=swap" media="print" onload="this.media='all'"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/star-markdown-css@0.1.24/dist/yun/yun-markdown.min.css"><script src="//at.alicdn.com/t/font_1140697_j5gk85dg4pf.js" async></script><script src="https://cdn.jsdelivr.net/npm/scrollreveal/dist/scrollreveal.min.js" defer></script><script>document.addEventListener("DOMContentLoaded", () => {
+  [".post-card",".post-content img"].forEach((target)=> {
+    ScrollReveal().reveal(target);
+  })
+});
+</script><link id="light-prism-css" rel="stylesheet" href="https://cdn.jsdelivr.net/npm/prismjs@latest/themes/prism.css" media="(prefers-color-scheme: light)"><link id="dark-prism-css" rel="stylesheet" href="https://cdn.jsdelivr.net/npm/prismjs@latest/themes/prism-tomorrow.css" media="(prefers-color-scheme: dark)"><link rel="icon" href="/yun.svg"><link rel="mask-icon" href="/yun.svg" color="#0078E7"><link rel="alternate icon" href="/yun.ico"><link rel="preload" href="/css/hexo-theme-yun.css" as="style"><link rel="preload" href="/js/utils.js" as="script"><link rel="preload" href="/js/hexo-theme-yun.js" as="script"><link rel="prefetch" href="/js/sidebar.js" as="script"><link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin><script id="yun-config">
+    const Yun = window.Yun || {};
+    window.CONFIG = {"hostname":"shgxy.github.io.git","root":"/","title":"可那灯火未明的不老阁","version":"1.6.1","mode":"auto","copycode":true,"page":{"isPost":true},"i18n":{"placeholder":"搜索...","empty":"找不到您查询的内容: ${query}","hits":"找到 ${hits} 条结果","hits_time":"找到 ${hits} 条结果（用时 ${time} 毫秒）"},"anonymous_image":"https://cdn.jsdelivr.net/gh/YunYouJun/cdn/img/avatar/none.jpg","say":{"api":"https://el-bot-api.vercel.app/api/words/young"},"local_search":{"path":"/search.xml"},"fireworks":{"colors":["255, 0, 0","0, 255, 0","0, 255, 255"]}};
+  </script><link rel="stylesheet" href="/css/hexo-theme-yun.css"><script src="/js/utils.js"></script><script src="/js/hexo-theme-yun.js"></script><link rel="alternate" href="/atom.xml" title="ifDo7's Blog" type="application/atom+xml"><link rel="preconnect" href="https://www.google-analytics.com" crossorigin><script async src="https://www.googletagmanager.com/gtag/js?id=G-1LL0D86CY9"></script><script>if (CONFIG.hostname === location.hostname) {
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-1LL0D86CY9');
+}</script><script data-ad-client="ca-pub-2245427233262012" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script><script>(function(){
+  var bp = document.createElement('script');
+  var curProtocol = window.location.protocol.split(':')[0];
+  if (curProtocol === 'https') {
+    bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';
+  }
+  else {
+    bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+  }
+  var s = document.getElementsByTagName("script")[0];
+  s.parentNode.insertBefore(bp, s);
+})();</script><!-- Google Tag Manager --><script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src='https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);})(window,document,'script','dataLayer','GTM-M9KWR9L');</script><!-- End Google Tag Manager --><meta name="description" content="作业_031.  IP报文在转发时是怎样使用路由表和转发表的？答：  路由器通过**路由表(RIB)选择路由——位于控制平面；选择出的路由下发到转发表(FIB)**——位于数据平面。  内部(OSPF、RIP)&#x2F;外部(BGP)路由协议分别生成内部&#x2F;外部路由表，路由表通过依次比较表中条目的优先级和开销来决定将哪些路由下发到转发表。 其中优先级用于不同路由协议间优先级比较；开销用于同一种路由协议不同路">
+<meta property="og:type" content="article">
+<meta property="og:title" content="ifDo7&#39;s Blog">
+<meta property="og:url" content="https://shgxy.github.io.git/2021/12/02/%E4%BD%9C%E4%B8%9A_03/index.html">
+<meta property="og:site_name" content="ifDo7&#39;s Blog">
+<meta property="og:description" content="作业_031.  IP报文在转发时是怎样使用路由表和转发表的？答：  路由器通过**路由表(RIB)选择路由——位于控制平面；选择出的路由下发到转发表(FIB)**——位于数据平面。  内部(OSPF、RIP)&#x2F;外部(BGP)路由协议分别生成内部&#x2F;外部路由表，路由表通过依次比较表中条目的优先级和开销来决定将哪些路由下发到转发表。 其中优先级用于不同路由协议间优先级比较；开销用于同一种路由协议不同路">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="c:/Users/Shgxy/AppData/Roaming/Typora/typora-user-images/image-20211202210220595.png">
+<meta property="article:published_time" content="2021-12-02T15:48:54.902Z">
+<meta property="article:modified_time" content="2021-12-02T15:48:54.902Z">
+<meta property="article:author" content="ifDo7">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="c:/Users/Shgxy/AppData/Roaming/Typora/typora-user-images/image-20211202210220595.png"><script src="/js/ui/mode.js"></script></head><body><script defer src="https://cdn.jsdelivr.net/npm/animejs@latest"></script><script defer src="/js/ui/fireworks.js"></script><canvas class="fireworks"></canvas><div class="container"><a class="sidebar-toggle hty-icon-button" id="menu-btn"><div class="hamburger hamburger--spin" type="button"><span class="hamburger-box"><span class="hamburger-inner"></span></span></div></a><div class="sidebar-toggle sidebar-overlay"></div><aside class="sidebar"><script src="/js/sidebar.js"></script><ul class="sidebar-nav"><li class="sidebar-nav-item sidebar-nav-toc hty-icon-button sidebar-nav-active" data-target="post-toc-wrap" title="文章目录"><svg class="icon" aria-hidden="true"><use xlink:href="#icon-list-ordered"></use></svg></li><li class="sidebar-nav-item sidebar-nav-overview hty-icon-button" data-target="site-overview-wrap" title="站点概览"><svg class="icon" aria-hidden="true"><use xlink:href="#icon-passport-line"></use></svg></li></ul><div class="sidebar-panel" id="site-overview-wrap"><div class="site-info fix-top"><a class="site-author-avatar" href="/about/" title="ifDo7"><img width="96" loading="lazy" src="/images/avatar.jpg" alt="ifDo7"><span class="site-author-status" title="维纳斯的银钩。">🥱</span></a><div class="site-author-name"><a href="/about/">ifDo7</a></div><span class="site-name">ifDo7's Blog</span><sub class="site-subtitle"></sub><div class="site-desciption"></div></div><nav class="site-state"><a class="site-state-item hty-icon-button icon-home" href="/" title="首页"><span class="site-state-item-icon"><svg class="icon" aria-hidden="true"><use xlink:href="#icon-home-4-line"></use></svg></span></a><div class="site-state-item"><a href="/archives/" title="归档"><span class="site-state-item-icon"><svg class="icon" aria-hidden="true"><use xlink:href="#icon-archive-line"></use></svg></span><span class="site-state-item-count">23</span></a></div><div class="site-state-item"><a href="/categories/" title="分类"><span class="site-state-item-icon"><svg class="icon" aria-hidden="true"><use xlink:href="#icon-folder-2-line"></use></svg></span><span class="site-state-item-count">19</span></a></div><div class="site-state-item"><a href="/tags/" title="标签"><span class="site-state-item-icon"><svg class="icon" aria-hidden="true"><use xlink:href="#icon-price-tag-3-line"></use></svg></span><span class="site-state-item-count">16</span></a></div><a class="site-state-item hty-icon-button" href="/about/#comment" title="留言板"><span class="site-state-item-icon"><svg class="icon" aria-hidden="true"><use xlink:href="#icon-clipboard-line"></use></svg></span></a></nav><hr style="margin-bottom:0.5rem"><div class="links-of-author"><a class="links-of-author-item hty-icon-button" rel="noopener" title="QQ群:待定ing" target="_blank" style="color:#12B7F5"><svg class="icon" aria-hidden="true"><use xlink:href="#icon-qq-line"></use></svg></a><a class="links-of-author-item hty-icon-button" rel="noopener" title="微信:shg799" target="_blank" style="color:#1AAD19"><svg class="icon" aria-hidden="true"><use xlink:href="#icon-wechat-2-line"></use></svg></a><a class="links-of-author-item hty-icon-button" rel="noopener" href="https://github.com/Shgxy" title="GitHub" target="_blank" style="color:#181717"><svg class="icon" aria-hidden="true"><use xlink:href="#icon-github-line"></use></svg></a><a class="links-of-author-item hty-icon-button" rel="noopener" href="mailto:shg799@foxmail.com" title="E-Mail:shg799@foxmail.com" target="_blank" style="color:#8E71C1"><svg class="icon" aria-hidden="true"><use xlink:href="#icon-mail-line"></use></svg></a></div><hr style="margin:0.5rem 1rem"><div class="links"><a class="links-item hty-icon-button" href="/" title="共产主义接班人" style="color:dodgerblue"><svg class="icon" aria-hidden="true"><use xlink:href="#icon-genderless-line"></use></svg></a></div><br><a class="links-item hty-icon-button" id="toggle-mode-btn" href="javascript:;" title="Mode" style="color: #f1cb64"><svg class="icon" aria-hidden="true"><use xlink:href="#icon-contrast-2-line"></use></svg></a></div><div class="sidebar-panel sidebar-panel-active" id="post-toc-wrap"><div class="post-toc"><div class="post-toc-content"><ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E4%BD%9C%E4%B8%9A-03"><span class="toc-number">1.</span> <span class="toc-text">作业_03</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#1-IP%E6%8A%A5%E6%96%87%E5%9C%A8%E8%BD%AC%E5%8F%91%E6%97%B6%E6%98%AF%E6%80%8E%E6%A0%B7%E4%BD%BF%E7%94%A8%E8%B7%AF%E7%94%B1%E8%A1%A8%E5%92%8C%E8%BD%AC%E5%8F%91%E8%A1%A8%E7%9A%84%EF%BC%9F"><span class="toc-number">1.1.</span> <span class="toc-text">1.  IP报文在转发时是怎样使用路由表和转发表的？</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-%E8%AF%95%E5%88%86%E5%88%AB%E7%BB%99%E5%87%BA%E7%BD%91%E7%BB%9CA%E5%88%B0%E7%BD%91%E7%BB%9CB%E3%80%81C%E3%80%81D%E3%80%81E%E3%80%81F%E7%9A%84%E6%9C%80%E7%9F%AD%E9%80%9A%E8%B7%AF%E5%90%91%E9%87%8F%EF%BC%8C%E5%B9%B6%E8%AF%B4%E6%98%8E%E7%90%86%E7%94%B1%EF%BC%8C%E8%BF%99%E4%BA%9BAS%E4%B9%8B%E9%97%B4%E7%9A%84%E5%85%B3%E7%B3%BB%E5%A6%82%E4%B8%8B"><span class="toc-number">1.2.</span> <span class="toc-text">2.  试分别给出网络A到网络B、C、D、E、F的最短通路向量，并说明理由，这些AS之间的关系如下</span></a></li></ol></li></ol></div></div></div></aside><main class="sidebar-translate" id="content"><div id="post"><article class="hty-card post-block" itemscope itemtype="https://schema.org/Article"><link itemprop="mainEntityOfPage" href="https://Shgxy.github.io.git/2021/12/02/%E4%BD%9C%E4%B8%9A_03/"><span hidden itemprop="author" itemscope itemtype="https://schema.org/Person"><meta itemprop="name" content="ifDo7"><meta itemprop="description"></span><span hidden itemprop="publisher" itemscope itemtype="https://schema.org/Organization"><meta itemprop="name" content="ifDo7's Blog"></span><header class="post-header"><h1 class="post-title" itemprop="name headline"></h1><div class="post-meta"><div class="post-time" style="display:inline-block"><span class="post-meta-item-icon"><svg class="icon" aria-hidden="true"><use xlink:href="#icon-calendar-line"></use></svg></span> <time title="创建时间：2021-12-02 23:48:54" itemprop="dateCreated datePublished" datetime="2021-12-02T23:48:54+08:00">2021-12-02</time></div><span class="post-busuanzi"><span class="post-meta-divider">-</span><span class="post-meta-item-icon" title="阅读次数"><svg class="icon" aria-hidden="true"><use xlink:href="#icon-eye-line"></use></svg> <span id="busuanzi_value_page_pv"></span></span></span><div class="post-classify"></div></div></header><section class="post-body" itemprop="articleBody"><div class="post-content markdown-body" style="--smc-primary:#0078E7;"><h1 id="作业-03"><a href="#作业-03" class="headerlink" title="作业_03"></a>作业_03</h1><h2 id="1-IP报文在转发时是怎样使用路由表和转发表的？"><a href="#1-IP报文在转发时是怎样使用路由表和转发表的？" class="headerlink" title="1.  IP报文在转发时是怎样使用路由表和转发表的？"></a>1.  IP报文在转发时是怎样使用路由表和转发表的？</h2><p>答：</p>
+<blockquote>
+<p>路由器通过**路由表(RIB)<strong>选择路由——位于控制平面；选择出的路由下发到</strong>转发表(FIB)**——位于数据平面。</p>
+</blockquote>
+<p>内部(OSPF、RIP)/外部(BGP)<strong>路由协议</strong>分别生成内部/外部<strong>路由表</strong>，<strong>路由表</strong>通过依次比较表中条目的<strong>优先级</strong>和<strong>开销</strong>来决定将哪些路由下发到<strong>转发表</strong>。</p>
+<p>其中<strong>优先级</strong>用于<strong>不同</strong>路由协议间优先级比较；<strong>开销</strong>用于<strong>同一种</strong>路由协议不同路由条目的比较。</p>
+<p>那么，IP报文在转发时：</p>
+<ul>
+<li>优先查询<strong>FIB</strong>，<strong>FIB</strong>通过<strong>最长匹配原则</strong>来决定走哪条路由，也就是<strong>掩码匹配度越高</strong>的路由越<strong>优先选择</strong>；</li>
+<li>如果在<strong>FIB</strong>中查询不到，则会查询<strong>RIB</strong>，查到后添加进<strong>FIB</strong>，并转发出去；</li>
+<li>如果<strong>都没有查询到</strong>更匹配的路由，将会使用<strong>0.0.0.0/0</strong>这条<strong>缺省路由</strong>。</li>
+</ul>
+<p>如果没有查询到，有以下几种可能：</p>
+<ul>
+<li><strong>IP是合法的，但是没有注入到Internet路由表</strong></li>
+<li><strong>IP是保留的，不能用于Internet通信使用</strong></li>
+<li><strong>IP是私有的，不能出现在Internet上</strong></li>
+</ul>
+</br>
+
+<h2 id="2-试分别给出网络A到网络B、C、D、E、F的最短通路向量，并说明理由，这些AS之间的关系如下"><a href="#2-试分别给出网络A到网络B、C、D、E、F的最短通路向量，并说明理由，这些AS之间的关系如下" class="headerlink" title="2.  试分别给出网络A到网络B、C、D、E、F的最短通路向量，并说明理由，这些AS之间的关系如下"></a>2.  试分别给出网络A到网络B、C、D、E、F的最短通路向量，并说明理由，这些AS之间的关系如下</h2><ul>
+<li><strong>Peering：</strong>(AS1,AS2)，(AS1,AS3)，(AS3,AS4)，(AS4,AS5)；</li>
+<li><strong>Provider/Customer：</strong>AS4是AS1和AS2的Provider，AS3是AS6的Provider，AS5是AS7的Provider。</li>
+</ul>
+<img src="C:\Users\Shgxy\AppData\Roaming\Typora\typora-user-images\image-20211202210220595.png" alt="image-20211202210220595"  />
+
+<hr>
+<p>答：</p>
+<p><strong>A→B</strong> 的最短通路向量：**(AS1,AS2)**</p>
+<ul>
+<li>理由：A在AS1下，B在AS2下，且AS1与AS2为<strong>Peering</strong>关系，可以直接互通，减少向上游AS4的转送成本。</li>
+</ul>
+<p><strong>A→C</strong> 的最短通路向量：**(AS1,AS3)**</p>
+<ul>
+<li>理由：AS1与AS3为<strong>Peering</strong>关系。</li>
+</ul>
+<p><strong>A→D <strong>的最短通路向量：</strong>(AS1,AS4,AS5)</strong></p>
+<ul>
+<li>理由：D在AS5下，A在AS1下，AS4是AS1的<strong>Provider</strong>，AS4与AS5是<strong>Peering</strong>关系，因此需要借由AS4进行转送。</li>
+</ul>
+<p><strong>A→E</strong> 的最短通路向量：**(AS1,AS3,AS6)**</p>
+<ul>
+<li>理由：E在AS6下，A在AS1下，AS3是AS6的<strong>Provider</strong>，AS3与AS1是<strong>Peering</strong>关系，因此需要借由AS3进行转送。</li>
+</ul>
+<p><strong>A→F ** 的最短通路向量：</strong>(AS1,AS4,AS5,AS7)**</p>
+<ul>
+<li>理由：同理A→D的最短通路向量，先走到AS5，且AS5是AS7的<strong>Provider</strong>，再走到AS7。<ul>
+<li>因为AS6与AS7<strong>既不是Peering也不是Provider</strong>，因此从AS6→AS7需要绕路，所以选择**(AS1,AS4,AS5,AS7)<strong>作为</strong>A→F**的最短通路向量，而不选择(AS1,AS3,AS6,AS7)。</li>
+</ul>
+</li>
+</ul>
+</div><ul class="post-copyright"><li class="post-copyright-author"><strong>本文作者：</strong>ifDo7</li><li class="post-copyright-link"><strong>本文链接：</strong><a href="https://shgxy.github.io.git/2021/12/02/%E4%BD%9C%E4%B8%9A_03/" title="">https://shgxy.github.io.git/2021/12/02/%E4%BD%9C%E4%B8%9A_03/</a></li><li class="post-copyright-license"><strong>版权声明：</strong>本博客所有文章除特别声明外，均默认采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh" target="_blank" rel="noopener" title="CC BY-NC-SA 4.0 "><svg class="icon"><use xlink:href="#icon-creative-commons-line"></use></svg><svg class="icon"><use xlink:href="#icon-creative-commons-by-line"></use></svg><svg class="icon"><use xlink:href="#icon-creative-commons-nc-line"></use></svg><svg class="icon"><use xlink:href="#icon-creative-commons-sa-line"></use></svg></a> 许可协议。</li></ul><script>document.addEventListener('copy', function (event) {
+  const clipboardData = event.clipboardData || window.clipboardData;
+  if (!clipboardData) { return; }
+  const text = window.getSelection().toString();
+  if (text) {
+    event.preventDefault();
+    clipboardData.setData('text/plain', text + '\n\n本文作者：ifDo7\n本文链接：https://shgxy.github.io.git/2021/12/02/%E4%BD%9C%E4%B8%9A_03/\n版权声明：本博客所有文章除特别声明外，均默认采用 CC BY-NC-SA 4.0 许可协议。');
+  }
+});</script></section></article><div class="post-nav"><div class="post-nav-item"></div><div class="post-nav-item"><a class="post-nav-next" href="/2021/11/23/Go%E5%8D%A0%E4%BD%8D%E7%AC%A6%E7%9A%84%E4%BD%BF%E7%94%A8/" rel="next" title="Go的%d,%p,%v等占位符的使用"><span class="post-nav-text">Go的%d,%p,%v等占位符的使用</span><svg class="icon" aria-hidden="true"><use xlink:href="#icon-arrow-right-s-line"></use></svg></a></div></div></div><div class="hty-card" id="comment"><div class="comment-tooltip text-center"><span>如果您有任何关于博客内容的相关讨论，欢迎前往 <a href="https://github.com/Shgxy/Shgxy.github.io/discussions" target="_blank">GitHub Discussions</a> 与我交流。</span><br></div><div id="minivaline-container"></div><script>Yun.utils.getScript("https://cdn.jsdelivr.net/npm/minivaline@6", () => {
+  const minivalineConfig = {"enable":true,"serverURL":"https://waline.vercel.app","md":true,"backend":"waline"}
+  minivalineConfig.el = "#minivaline-container"
+  new MiniValine(minivalineConfig);
+}, window.MiniValine);</script></div></main><footer class="sidebar-translate" id="footer"><div class="copyright"><span>&copy; 2021 – 2022 </span><span class="with-love" id="animate" title="急！链接位招租~~"><svg class="icon" aria-hidden="true"><use xlink:href="#icon-cloud-line"></use></svg></span><span class="author"> ifDo7</span></div><div class="live_time"><span>本博客已竭尽全力地运行了</span><span id="display_live_time"></span><span class="moe-text">啦🥰~ (●'◡'●)</span><script>function blog_live_time() {
+  setTimeout(blog_live_time, 1000);
+  const start = new Date('2021-07-01T13:14:00');
+  const now = new Date();
+  const timeDiff = (now.getTime() - start.getTime());
+  const msPerMinute = 60 * 1000;
+  const msPerHour = 60 * msPerMinute;
+  const msPerDay = 24 * msPerHour;
+  const passDay = Math.floor(timeDiff / msPerDay);
+  const passHour = Math.floor((timeDiff % msPerDay) / 60 / 60 / 1000);
+  const passMinute = Math.floor((timeDiff % msPerHour) / 60 / 1000);
+  const passSecond = Math.floor((timeDiff % msPerMinute) / 1000);
+  display_live_time.innerHTML = " " + passDay + " 天 " + passHour + " 小时 " + passMinute + " 分 " + passSecond + " 秒";
+}
+blog_live_time();
+</script></div><div id="busuanzi"><script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script><span id="busuanzi_container_site_uv" title="总访客量"><span><svg class="icon" aria-hidden="true"><use xlink:href="#icon-user-line"></use></svg></span><span id="busuanzi_value_site_uv"></span></span><span class="footer-separator">|</span><span id="busuanzi_container_site_pv" title="总访问量"><span><svg class="icon" aria-hidden="true"><use xlink:href="#icon-eye-line"></use></svg></span><span id="busuanzi_value_site_pv"></span></span></div></footer><a class="hty-icon-button" id="back-to-top" aria-label="back-to-top" href="#"><svg class="icon" aria-hidden="true"><use xlink:href="#icon-arrow-up-s-line"></use></svg><svg class="progress-circle-container" viewBox="0 0 100 100"><circle class="progress-circle" id="progressCircle" cx="50" cy="50" r="48" fill="none" stroke="#0078E7" stroke-width="2" stroke-linecap="round"></circle></svg></a><a class="popup-trigger hty-icon-button icon-search" id="search" href="javascript:;" title="搜索"><span class="site-state-item-icon"><svg class="icon" aria-hidden="true"><use xlink:href="#icon-search-line"></use></svg></span></a><script>window.addEventListener("DOMContentLoaded", () => {
+  // Handle and trigger popup window
+  document.querySelector(".popup-trigger").addEventListener("click", () => {
+    document.querySelector(".popup").classList.add("show");
+    setTimeout(() => {
+      document.querySelector(".search-input").focus();
+    }, 100);
+  });
+
+  // Monitor main search box
+  const onPopupClose = () => {
+    document.querySelector(".popup").classList.remove("show");
+  };
+
+  document.querySelector(".popup-btn-close").addEventListener("click", () => {
+    onPopupClose();
+  });
+
+  window.addEventListener("keyup", event => {
+    if (event.key === "Escape") {
+      onPopupClose();
+    }
+  });
+});
+</script><script src="/js/search/local-search.js" defer></script><div class="popup search-popup"><div class="search-header"><span class="popup-btn-close close-icon hty-icon-button"><svg class="icon" aria-hidden="true"><use xlink:href="#icon-close-line"></use></svg></span></div><div class="search-input-container"><input class="search-input" id="local-search-input" type="text" placeholder="搜索..." value=""></div><div id="local-search-result"></div></div><script>const date = new Date();
+const today = (date.getMonth() + 1) + "-" + date.getDate()
+const mourn_days = ["4-4"]
+if (mourn_days.includes(today)) {
+  document.documentElement.style.filter = "grayscale(1)";
+}</script></div></body></html>
